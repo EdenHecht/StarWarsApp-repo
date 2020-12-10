@@ -12,7 +12,7 @@ function Characters(props) {
       <h1>star wars</h1>
       {isLoading && info.length === 0
         ? "loading..."
-        : info.map((character, index) => (
+        : info.map((character) => (
             <p key={character.id}>
               <Link to={`/character/${character.id}`}>{character.name}</Link>
             </p>

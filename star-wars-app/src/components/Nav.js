@@ -10,6 +10,12 @@ function Nav() {
       <p>
         <Link to="/films">films</Link>
       </p>
+      <p>
+        <Link to="/starships">starships</Link>
+      </p>
+      <p>
+        <Link to="/species">species</Link>
+      </p>
     </div>
   );
 }
