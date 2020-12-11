@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSpecificResult, useAllResults } from "../../hooks/hooks";
 
-function SingleStarship() {
+function SinglePlanet() {
   const { id } = useParams();
   const [films, setFilms] = useState([]);
   const [characters, setCharacters] = useState([]);
-  const [isReady, setIsReady] = useState(false);
 
-  const [isLoadingStarship, starshipInfo, starshipError] = useSpecificResult(
-    `https://swapi.dev/api/starships/${id}`
+  const [isLoadingPlanet, planetInfo, planetError] = useSpecificResult(
+    `https://swapi.dev/api/planets/${id}`
   );
 
   const [isLoadingFilms, filmsInfo, filmsError] = useAllResults(
@@ -23,39 +22,39 @@ function SingleStarship() {
 
   useEffect(() => {
     if (
-      !isLoadingStarship &&
+      !isLoadingPlanet &&
       !isLoadingFilms &&
       !isLoadingCharacters &&
-      starshipInfo.length !== 0 &&
+      planetInfo.length !== 0 &&
       filmsInfo.length !== 0 &&
       charactersInfo.length !== 0
     ) {
       filmsInfo.map((film) => {
-        if (starshipInfo.films.includes(film.url)) {
+        if (planetInfo.films.includes(film.url)) {
           setFilms((prevArr) => [...prevArr, film]);
         }
       });
       charactersInfo.map((character) => {
-        if (starshipInfo.pilots.includes(character.url)) {
+        if (planetInfo.residents.includes(character.url)) {
           setCharacters((prevArr) => [...prevArr, character]);
         }
       });
-      setIsReady(true);
     }
-  }, [isLoadingStarship, isLoadingFilms, isLoadingCharacters]);
+  }, [isLoadingPlanet, isLoadingFilms, isLoadingCharacters]);
 
   return (
     <div>
-      {!isReady ? (
+      {films.length === 0 ? (
         "loading..."
       ) : (
         <div>
-          <p>name: {starshipInfo.name}</p>
-          <p>cost in credits: {starshipInfo.cost_in_credits}</p>
-          <p>max atmosphering speed: {starshipInfo.max_atmosphering_speed}</p>
-          <p>crew: {starshipInfo.crew}</p>
-          <p>passengers: {starshipInfo.passengers}</p>
-          <p>hyperdrive rating: {starshipInfo.hyperdrive_rating}</p>
+          <p>name: {planetInfo.name}</p>
+          <p>population: {planetInfo.population}</p>
+          <p>rotation_period: {planetInfo.rotation_period}</p>
+          <p>orbital_period: {planetInfo.orbital_period}</p>
+          <p>diameter: {planetInfo.diameter}</p>
+          <p>climate: {planetInfo.climate}</p>
+          <p>diameter: {planetInfo.diameter}</p>
 
           {films.length !== 0 ? (
             <span>
@@ -70,7 +69,7 @@ function SingleStarship() {
 
           {characters.length !== 0 ? (
             <span>
-              <p>pilots</p>
+              <p>residents</p>
               {characters.map((character) => (
                 <p key={character.name}>
                   <Link to={`/character/${character.id}`}>
@@ -86,4 +85,4 @@ function SingleStarship() {
   );
 }
 
-export default SingleStarship;
+export default SinglePlanet;

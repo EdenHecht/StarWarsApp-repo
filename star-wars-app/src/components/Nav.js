@@ -16,6 +16,9 @@ function Nav() {
       <p>
         <Link to="/species">species</Link>
       </p>
+      <p>
+        <Link to="/planets">planets</Link>
+      </p>
     </div>
   );
 }

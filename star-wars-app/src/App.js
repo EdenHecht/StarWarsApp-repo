@@ -8,6 +8,8 @@ import Starships from "./components/starships/Starships";
 import SingleStarship from "./components/starships/SingleStarship";
 import Species from "./components/species/Species";
 import SingleSpecies from "./components/species/SingleSpecies";
+import Planets from "./components/planets/Planets";
+import SinglePlanet from "./components/planets/SinglePlanet";
 import Nav from "./components/Nav";
 
 export default function App() {
@@ -28,6 +30,9 @@ export default function App() {
           <Route path="/species" exact>
             <Species />
           </Route>
+          <Route path="/planets" exact>
+            <Planets />
+          </Route>
           <Route path={`/character/:id`} exact>
             <SingleCharacter />
           </Route>
@@ -39,6 +44,9 @@ export default function App() {
           </Route>
           <Route path={`/species/:id`} exact>
             <SingleSpecies />
+          </Route>
+          <Route path={`/planets/:id`} exact>
+            <SinglePlanet />
           </Route>
         </Switch>
       </div>

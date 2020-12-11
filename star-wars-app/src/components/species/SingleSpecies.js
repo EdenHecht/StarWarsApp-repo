@@ -49,13 +49,17 @@ function SingleSpecies() {
       ) : (
         <div>
           <p>name: {speciesInfo.name}</p>
+          <p>classification: {speciesInfo.classification}</p>
+          <p>average height: {speciesInfo.average_height}</p>
+          <p>average lifespan: {speciesInfo.average_lifespan}</p>
+
           <p>films</p>
           {films.map((film) => (
             <p key={film.title}>
               <Link to={`/film/${film.id}`}>{film.title}</Link>
             </p>
           ))}
-          <p>citizens</p>
+          <p>people</p>
           {characters.map((character) => (
             <p key={character.name}>
               <Link to={`/character/${character.id}`}>{character.name}</Link>
