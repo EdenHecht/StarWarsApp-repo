@@ -34,12 +34,14 @@ function SingleCharacter(props) {
         if (characterInfo.films.includes(film.url)) {
           setFilms((prevArr) => [...prevArr, film]);
         }
+        return;
       });
 
       starshipsInfo.map((starship) => {
         if (characterInfo.starships.includes(starship.url)) {
           setStarships((prevArr) => [...prevArr, starship]);
         }
+        return;
       });
       setIsReady(true);
     }
@@ -73,13 +75,16 @@ function SingleCharacter(props) {
               <p>starships</p>
               {starships.map((starship) => (
                 <p key={starship.name}>
-                  <Link to={`/film/${starship.id}`}>{starship.name}</Link>
+                  <Link to={`/starship/${starship.id}`}>{starship.name}</Link>
                 </p>
               ))}
             </span>
           ) : null}
         </div>
       )}
+      {characterError}
+      {filmsError}
+      {starshipsError}
     </div>
   );
 }

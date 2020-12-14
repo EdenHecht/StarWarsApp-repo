@@ -61,7 +61,7 @@ function SingleStarship() {
             <span>
               <p>films</p>
               {films.map((film) => (
-                <p key={film.title}>
+                <p key={film.title + starshipInfo.name}>
                   <Link to={`/film/${film.id}`}>{film.title}</Link>
                 </p>
               ))}

@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+body {
+  background: linear-gradient(180deg, #32022e 0%, #100117 100%);
+  color: #cdc4d0;
+  font-family: Montserrat;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* menu and logo row */
+.logo-menu {
+  width: 100vw;
+  display: flex;
+  /* cursor: pointer; */
+}
+
+/* logo svg */
+.logo-img {
+  width: 5.5em;
+}
+
+/* menu svg */
+.menu-icon {
+  width: 2em;
+}
+
+/* menu div */
+.menu {
+  width: 35%;
+}
+
+/* the hamburger menu  */
+.menu-items {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  background: #100117;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  place-content: center;
+  z-index: 1;
+  display: none;
+}
+
+/* the hamburger menu elements */
+.elm {
+  color: #cdc4d0;
+  text-decoration: none;
+  padding: 1em;
+  margin: 0.4em;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.logo {
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+
+.open-nav {
+  display: grid;
+}
+
+.exit {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  body {
+  }
+
+  .logo {
+    cursor: pointer;
+    margin-top: 0;
+  }
+
+  .navbar {
+    display: flex;
+    padding: 1em;
+  }
+
+  /* .nav-element {
+    color: #cdc4d0;
+    text-decoration: none;
+    margin-left: 2em;
+    text-transform: uppercase;
+    font-size: 0.9em;
+  } */
+
+  .logo-img {
+    width: 7em;
+    cursor: pointer;
+  }
+
+  .exit,
+  .menu {
+    display: none;
+  }
+
+  .menu-items {
+    display: flex;
+    background: none;
+    justify-content: flex-end;
+    margin-right: 2em;
+    height: unset;
+  }
+
+  .elm {
+    margin: 0.6em 1em 0 0;
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 750px) {
+  .elm {
+    margin: 1em 2em 0 0;
+    font-size: 0.75em;
+  }
+}
+
+@media (min-width: 900px) {
+  .logo {
+    margin: 0.5em 0 0 1em;
+    cursor: pointer;
+  }
+
+  .logo-img {
+    width: 10em;
+  }
+
+  .elm {
+    margin: 1em 2em 0 0;
+    font-size: 0.9em;
+  }
+}
