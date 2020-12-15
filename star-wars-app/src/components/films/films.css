@@ -3,8 +3,8 @@ h1 {
   font-weight: 500;
   text-align: center;
   margin: 2em auto 3.5em;
+  position: relative;
 }
-
 span {
   position: relative;
 }
@@ -54,6 +54,42 @@ span:after {
   border: 1px solid #c6bebe;
 }
 
+.poster-img {
+  height: 6em;
+  width: 6em;
+  border-radius: 50%;
+}
+
 .mb {
   margin-bottom: 1em;
+}
+
+.detail-box {
+  display: flex;
+}
+
+.left-col {
+  width: 40%;
+  position: relative;
+}
+
+.film-title-link {
+  text-decoration: none;
+  position: absolute;
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+  left: 0;
+  top: 40px;
+}
+
+.right-col {
+  width: 60%;
+  padding-left: 0.7em;
+  color: black;
+  font-size: 0.9em;
+}
+
+.margin-b {
+  margin-bottom: 0.5em;
 }
