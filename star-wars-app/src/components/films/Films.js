@@ -1,17 +1,35 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAllResults } from "../../hooks/hooks";
 import "./films.css";
 import poster from "../../utils/resources/posters/a new hope.jpg";
+import arrow from "../../utils/resources/down-arrow.svg";
 
 function Films(props) {
+  const [isReady, setIsReady] = useState(false);
+  const [expanded, setExpanded] = useState(-1);
+
   const [isLoading, info, error] = useAllResults(
     "https://swapi.dev/api/films/"
   );
 
+  useEffect(() => {
+    if (isLoading && info.length === 0) {
+      setIsReady(true);
+    }
+  }, [isLoading, info]);
+
+  function handleExpand(index) {
+    if (index === expanded) {
+      setExpanded(-1);
+    } else {
+      setExpanded(index);
+    }
+  }
+
   return (
     <div>
-      {isLoading && info.length === 0 ? (
+      {!isReady ? (
         "loading..."
       ) : (
         <div className="mb">
@@ -41,7 +59,15 @@ function Films(props) {
                       Release date: {film.release_date}
                     </div>
                   </div>
+                  <div
+                    className="expand-btn"
+                    onClick={(e) => handleExpand(index)}
+                  >
+                    Expand
+                    <img src={arrow} alt="" className="arrow-icon" />
+                  </div>
                 </div>
+                {expanded === index ? <div className="expanded">hi</div> : null}
               </div>
             ))}
           </div>

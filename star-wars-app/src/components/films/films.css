@@ -37,7 +37,7 @@ span:after {
 
 .film-card {
   background: #e4e2e2;
-  margin: 1em 1em 5em;
+  margin: 1em 0 5em 0;
   padding: 2em;
   position: relative;
   border-radius: 13px;
@@ -92,4 +92,23 @@ span:after {
 
 .margin-b {
   margin-bottom: 0.5em;
+}
+
+.expand-btn {
+  color: black;
+  font-size: 0.7em;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  margin-left: 4px;
+}
+
+.expanded {
+  color: black;
+  font-size: 0.9em;
 }
