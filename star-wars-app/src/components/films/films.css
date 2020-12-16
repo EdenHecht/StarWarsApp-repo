@@ -102,6 +102,7 @@ span:after {
   right: 10px;
   margin-bottom: 7px;
   cursor: pointer;
+  display: unset;
 }
 
 .arrow-icon {
@@ -110,5 +111,29 @@ span:after {
 
 .expanded {
   color: black;
+  font-size: 0.8em;
+  display: flex;
+  margin-top: 20px;
+}
+
+.column {
+  width: 33.33%;
+  padding: 0.5em;
+}
+
+.read-more {
   font-size: 0.9em;
+  position: absolute;
+  bottom: 8px;
+  left: 36px;
+  padding: 6px;
+  margin-bottom: 7px;
+  cursor: pointer;
+  border-radius: 7px;
+  background: #702b31;
+}
+
+.read-more-link {
+  color: #e4e2e2;
+  text-decoration: none;
 }

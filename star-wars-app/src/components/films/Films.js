@@ -4,22 +4,13 @@ import { useAllResults } from "../../hooks/hooks";
 import "./films.css";
 import poster from "../../utils/resources/posters/a new hope.jpg";
 import arrow from "../../utils/resources/down-arrow.svg";
+import { showFirstResults } from "../../utils/utils";
 
 function Films(props) {
-  const [isReady, setIsReady] = useState(false);
   const [expanded, setExpanded] = useState(-1);
+  const { filmsInfo, charactersMap, planetsMap, starshipsMap, isReady } = props;
 
-  const [isLoading, info, error] = useAllResults(
-    "https://swapi.dev/api/films/"
-  );
-
-  useEffect(() => {
-    if (isLoading && info.length === 0) {
-      setIsReady(true);
-    }
-  }, [isLoading, info]);
-
-  function handleExpand(index) {
+  function handleExpand(e, index) {
     if (index === expanded) {
       setExpanded(-1);
     } else {
@@ -37,7 +28,7 @@ function Films(props) {
             <span>Explore</span> The Films
           </h1>
           <div className="card-holder">
-            {info.map((film, index) => (
+            {filmsInfo.map((film, index) => (
               <div className="film-card" key={film.title + "-films"}>
                 <div className="poster-circle">
                   <img className="poster-img" src={poster} alt="" />
@@ -61,21 +52,64 @@ function Films(props) {
                   </div>
                   <div
                     className="expand-btn"
-                    onClick={(e) => handleExpand(index)}
+                    onClick={(e) => handleExpand(e, index)}
                   >
                     Expand
                     <img src={arrow} alt="" className="arrow-icon" />
                   </div>
                 </div>
-                {expanded === index ? <div className="expanded">hi</div> : null}
+                {expanded === index ? (
+                  <div className="expanded">
+                    <div className="column">
+                      <strong>Characters:</strong>
+                      {showFirstResults(film, "characters", charactersMap).map(
+                        (character) => (
+                          <p>{character.name}</p>
+                        )
+                      )}
+                    </div>
+                    <div className="column">
+                      <strong>Planets:</strong>
+
+                      {showFirstResults(film, "planets", planetsMap).map(
+                        (planet) => (
+                          <p>{planet.name}</p>
+                        )
+                      )}
+                    </div>
+                    <div className="column">
+                      <strong>Starships:</strong>
+                      {showFirstResults(film, "starships", starshipsMap).map(
+                        (starship) => (
+                          <p>{starship.name}</p>
+                        )
+                      )}
+                    </div>
+                    <div className="read-more">
+                      <Link to={`/film/${film.id}`} className="read-more-link">
+                        Read More
+                      </Link>
+                    </div>
+                  </div>
+                ) : null}
               </div>
             ))}
           </div>
         </div>
       )}
-      {error !== undefined ? <p>{error}</p> : null}
     </div>
   );
 }
 
 export default Films;
+
+//const [isReady, setIsReady] = useState(false);
+// const [isLoading, info, error] = useAllResults(
+//   "https://swapi.dev/api/films/"
+// );
+
+// useEffect(() => {
+//   if (isLoading && info.length === 0) {
+//     setIsReady(true);
+//   }
+// }, [isLoading, info]);
