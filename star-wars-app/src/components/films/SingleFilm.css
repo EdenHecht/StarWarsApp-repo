@@ -1,0 +1,71 @@
+.film-container {
+  background: #e4e2e2;
+  padding: 1em;
+  text-align: center;
+  margin-top: -4em;
+  position: relative;
+  z-index: 1;
+  color: black;
+  font-size: 0.8em;
+}
+.poster-container {
+  position: relative;
+  z-index: 2;
+}
+
+.poster-circle.single-circ {
+  height: 7em;
+  width: 7em;
+  top: -4em;
+  margin: auto;
+  display: block;
+  position: unset;
+}
+
+.poster-img.single-img {
+  height: 7em;
+  width: 7em;
+}
+
+.film-name-header {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #7b3232;
+  margin-top: 3em;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.ep-dir-row {
+  display: flex;
+  justify-content: center;
+  line-height: 2.5em;
+}
+
+.extra-r-padd {
+  padding-right: 2em;
+}
+
+.information-card {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.info-header {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+span::before,
+span::after {
+  display: none;
+}
+
+.info-col {
+  padding: 1em;
+}

@@ -24,7 +24,7 @@ function Films(props) {
         "loading..."
       ) : (
         <div className="mb">
-          <h1>
+          <h1 className="film-header">
             <span>Explore</span> The Films
           </h1>
           <div className="card-holder">

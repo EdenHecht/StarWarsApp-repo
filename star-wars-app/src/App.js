@@ -37,11 +37,29 @@ export default function App() {
   );
 
   useEffect(() => {
+    if (
+      !isReady &&
+      Object.keys(films).length !== 0 &&
+      Object.keys(characters).length !== 0 &&
+      Object.keys(planets).length !== 0 &&
+      Object.keys(starships).length !== 0
+    ) {
+      console.log("planets: ", planets);
+      console.log("films: ", films);
+      console.log("starships: ", starships);
+      console.log("characters: ", characters);
+
+      setIsReady(true);
+    }
+  }, [isReady, films, characters, planets, starships]);
+
+  useEffect(() => {
     if (!isLoadingFilms && filmsInfo.length !== 0) {
       filmsInfo.map((film) =>
         setFilms((prevVal) => {
           let newDict = { ...prevVal };
           newDict[film.id] = {
+            id: film.id,
             title: film.title,
             url: film.url,
             imagePath: "",
@@ -49,15 +67,6 @@ export default function App() {
           return newDict;
         })
       );
-      console.log(films);
-      if (
-        !isReady &&
-        characters.length !== 0 &&
-        planets.length !== 0 &&
-        starships.length !== 0
-      ) {
-        setIsReady(true);
-      }
     }
   }, [isLoadingFilms, filmsInfo]);
 
@@ -67,6 +76,7 @@ export default function App() {
         setStarships((prevVal) => {
           let newDict = { ...prevVal };
           newDict[starship.id] = {
+            id: starship.id,
             name: starship.name,
             url: starship.url,
             imagePath: "",
@@ -74,16 +84,6 @@ export default function App() {
           return newDict;
         })
       );
-      console.log(starships);
-
-      if (
-        !isReady &&
-        characters.length !== 0 &&
-        planets.length !== 0 &&
-        films.length !== 0
-      ) {
-        setIsReady(true);
-      }
     }
   }, [isLoadingStarships, starshipsInfo]);
 
@@ -93,6 +93,7 @@ export default function App() {
         setCharacters((prevVal) => {
           let newDict = { ...prevVal };
           newDict[character.id] = {
+            id: character.id,
             name: character.name,
             url: character.url,
             imagePath: "",
@@ -100,16 +101,6 @@ export default function App() {
           return newDict;
         })
       );
-      console.log(characters);
-
-      if (
-        !isReady &&
-        starships.length !== 0 &&
-        planets.length !== 0 &&
-        films.length !== 0
-      ) {
-        setIsReady(true);
-      }
     }
   }, [isLoadingCharacters, charactersInfo]);
 
@@ -119,6 +110,7 @@ export default function App() {
         setPlanets((prevVal) => {
           let newDict = { ...prevVal };
           newDict[planet.id] = {
+            id: planet.id,
             name: planet.name,
             url: planet.url,
             imagePath: "",
@@ -126,18 +118,8 @@ export default function App() {
           return newDict;
         })
       );
-      console.log(planets);
-
-      if (
-        !isReady &&
-        characters.length !== 0 &&
-        planets.length !== 0 &&
-        films.length !== 0
-      ) {
-        setIsReady(true);
-      }
     }
-  }, [isLoadingCharacters, planetsInfo]);
+  }, [isLoadingPlanets, planetsInfo]);
 
   return (
     <Router>
@@ -169,7 +151,12 @@ export default function App() {
             <SingleCharacter />
           </Route>
           <Route path={`/film/:id`} exact>
-            <SingleFilm />
+            <SingleFilm
+              charactersMap={characters}
+              planetsMap={planets}
+              starshipsMap={starships}
+              isReady={isReady}
+            />
           </Route>
           <Route path={`/starship/:id`} exact>
             <SingleStarship />
