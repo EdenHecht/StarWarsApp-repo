@@ -1,3 +1,7 @@
+.content-info {
+  margin-top: 1.5em;
+}
+
 .film-container {
   background: #e4e2e2;
   padding: 1em;
@@ -20,6 +24,7 @@
   margin: auto;
   display: block;
   position: unset;
+  border: 2px solid;
 }
 
 .poster-img.single-img {
@@ -28,7 +33,7 @@
 }
 
 .film-name-header {
-  font-size: 1.4em;
+  font-size: 1.8em;
   font-weight: bold;
   color: #7b3232;
   margin-top: 3em;
@@ -38,6 +43,10 @@
   text-decoration: none;
   color: black;
   cursor: pointer;
+}
+
+.link:hover {
+  color: #7b3232;
 }
 
 .ep-dir-row {
@@ -61,11 +70,33 @@
   text-transform: uppercase;
 }
 
-span::before,
-span::after {
-  display: none;
-}
-
 .info-col {
   padding: 1em;
+}
+
+#img-design {
+  position: relative;
+}
+#img-design::before {
+  background: #ffc500;
+  height: 3.5em;
+  width: 3.5em;
+  border-radius: 50%;
+  position: absolute;
+  top: 2em;
+  left: -2em;
+  content: "";
+  z-index: -1;
+}
+
+#img-design::after {
+  background: #7b3232;
+  height: 4.2em;
+  width: 4.2em;
+  border-radius: 50%;
+  position: absolute;
+  top: 3em;
+  left: 5.5em;
+  content: "";
+  z-index: -2;
 }

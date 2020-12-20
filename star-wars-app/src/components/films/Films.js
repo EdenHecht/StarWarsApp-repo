@@ -25,7 +25,7 @@ function Films(props) {
       ) : (
         <div className="mb">
           <h1 className="film-header">
-            <span>Explore</span> The Films
+            <span id="text-Design">Explore</span> The Films
           </h1>
           <div className="card-holder">
             {filmsInfo.map((film, index) => (

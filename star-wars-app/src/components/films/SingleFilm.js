@@ -42,10 +42,12 @@ function SingleFilm(props) {
       {!isAllReady ? (
         "loading..."
       ) : (
-        <>
+        <div className="content-info">
           <div className="poster-container">
             <div className="poster-circle single-circ">
-              <img className="poster-img single-img" src={poster} alt="" />
+              <div id="img-design">
+                <img className="poster-img single-img" src={poster} alt="" />
+              </div>
             </div>
           </div>
           <div className="film-container">
@@ -96,7 +98,7 @@ function SingleFilm(props) {
               ) : null}
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

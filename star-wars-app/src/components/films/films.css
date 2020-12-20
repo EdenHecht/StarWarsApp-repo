@@ -9,7 +9,7 @@ span {
   position: relative;
 }
 
-span:before {
+#text-Design:before {
   content: "";
   height: 4px;
   width: 120%;
@@ -20,7 +20,7 @@ span:before {
   left: -35px;
 }
 
-span:after {
+#text-Design:after {
   content: "";
   height: 4px;
   width: 16%;

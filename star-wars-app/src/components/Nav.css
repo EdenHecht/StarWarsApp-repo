@@ -9,7 +9,7 @@ body {
   height: 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width: fit-content;
+  /* width: fit-content; */
 }
 
 .navbar {
@@ -18,14 +18,14 @@ body {
 
 /* menu and logo row */
 .logo-menu {
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 /* logo svg */
 .logo-img {
-  width: 5.5em;
+  width: 8.5em;
 }
 
 /* menu svg */
@@ -35,8 +35,10 @@ body {
 
 /* menu div */
 .menu {
-  width: 35%;
+  /* width: 35%; */
   cursor: pointer;
+  /* new */
+  position: absolute;
 }
 
 /* the hamburger menu  */
@@ -66,9 +68,28 @@ body {
   font-weight: bold;
 }
 
+.elm::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #ffc500;
+  margin-top: 6px;
+  transition: width 0.3s;
+}
+
+.elm:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
 .logo {
   margin-top: 0.5em;
   cursor: pointer;
+  /* new */
+  margin: auto;
+  display: block;
+  position: unset;
 }
 
 .open-nav {
@@ -120,6 +141,7 @@ body {
     justify-content: flex-end;
     margin-right: 2em;
     height: unset;
+    position: absolute;
   }
 
   .elm {
