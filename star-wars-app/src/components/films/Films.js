@@ -58,7 +58,41 @@ function Films(props) {
                     <img src={arrow} alt="" className="arrow-icon" />
                   </div>
                 </div>
-                {expanded === index ? (
+                <div
+                  className={expanded === index ? "expanded" : "not-expanded"}
+                >
+                  <div className="column">
+                    <strong>Characters:</strong>
+                    {showFirstResults(film, "characters", charactersMap).map(
+                      (character) => (
+                        <p>{character.name}</p>
+                      )
+                    )}
+                  </div>
+                  <div className="column">
+                    <strong>Planets:</strong>
+
+                    {showFirstResults(film, "planets", planetsMap).map(
+                      (planet) => (
+                        <p>{planet.name}</p>
+                      )
+                    )}
+                  </div>
+                  <div className="column">
+                    <strong>Starships:</strong>
+                    {showFirstResults(film, "starships", starshipsMap).map(
+                      (starship) => (
+                        <p>{starship.name}</p>
+                      )
+                    )}
+                  </div>
+                  <div className="read-more">
+                    <Link to={`/film/${film.id}`} className="read-more-link">
+                      Read More
+                    </Link>
+                  </div>
+                </div>
+                {/* {expanded === index ? (
                   <div className="expanded">
                     <div className="column">
                       <strong>Characters:</strong>
@@ -91,7 +125,7 @@ function Films(props) {
                       </Link>
                     </div>
                   </div>
-                ) : null}
+                ) : null} */}
               </div>
             ))}
           </div>
@@ -102,14 +136,3 @@ function Films(props) {
 }
 
 export default Films;
-
-//const [isReady, setIsReady] = useState(false);
-// const [isLoading, info, error] = useAllResults(
-//   "https://swapi.dev/api/films/"
-// );
-
-// useEffect(() => {
-//   if (isLoading && info.length === 0) {
-//     setIsReady(true);
-//   }
-// }, [isLoading, info]);

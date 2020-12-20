@@ -170,5 +170,6 @@ body {
   .elm {
     margin: 1em 2em 0 0;
     font-size: 0.9em;
+    font-weight: normal;
   }
 }
