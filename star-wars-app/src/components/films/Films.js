@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { useAllResults } from "../../hooks/hooks";
-import "./films.css";
+//import "./films.css";
+import "../common-styles/Cards.css";
 import poster from "../../utils/resources/posters/a new hope.jpg";
 import arrow from "../../utils/resources/down-arrow.svg";
 import { showFirstResults } from "../../utils/utils";
@@ -24,7 +24,7 @@ function Films(props) {
         "loading..."
       ) : (
         <div className="mb">
-          <h1 className="film-header">
+          <h1 className="cards-header">
             <span id="text-Design">Explore</span> The Films
           </h1>
           <div className="card-holder">
@@ -33,17 +33,17 @@ function Films(props) {
                 <div
                   className={
                     expanded === index
-                      ? "film-card film-card-expanded"
-                      : "film-card"
+                      ? "single-card single-card-expanded"
+                      : "single-card"
                   }
                   key={film.title + "-films"}
                 >
-                  <div className="poster-circle">
-                    <img className="poster-img" src={poster} alt="" />
+                  <div className="image-circle">
+                    <img className="image-img" src={poster} alt="" />
                   </div>
                   <div className="detail-box">
                     <div className="left-col">
-                      <Link to={`/film/${film.id}`} className="film-title-link">
+                      <Link to={`/film/${film.id}`} className="title-link">
                         {film.title}
                       </Link>
                     </div>
@@ -115,40 +115,3 @@ function Films(props) {
 }
 
 export default Films;
-
-{
-  /* {expanded === index ? (
-                  <div className="expanded">
-                    <div className="column">
-                      <strong>Characters:</strong>
-                      {showFirstResults(film, "characters", charactersMap).map(
-                        (character) => (
-                          <p>{character.name}</p>
-                        )
-                      )}
-                    </div>
-                    <div className="column">
-                      <strong>Planets:</strong>
-
-                      {showFirstResults(film, "planets", planetsMap).map(
-                        (planet) => (
-                          <p>{planet.name}</p>
-                        )
-                      )}
-                    </div>
-                    <div className="column">
-                      <strong>Starships:</strong>
-                      {showFirstResults(film, "starships", starshipsMap).map(
-                        (starship) => (
-                          <p>{starship.name}</p>
-                        )
-                      )}
-                    </div>
-                    <div className="read-more">
-                      <Link to={`/film/${film.id}`} className="read-more-link">
-                        Read More
-                      </Link>
-                    </div>
-                  </div>
-                ) : null} */
-}

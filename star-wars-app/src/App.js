@@ -12,6 +12,7 @@ import Planets from "./components/planets/Planets";
 import SinglePlanet from "./components/planets/SinglePlanet";
 import Nav from "./components/Nav";
 import { useAllResults } from "./hooks/hooks";
+import { avatarExist } from "./utils/utils";
 
 export default function App() {
   const [characters, setCharacters] = useState({});
@@ -96,7 +97,9 @@ export default function App() {
             id: character.id,
             name: character.name,
             url: character.url,
-            imagePath: "",
+            imagePath: avatarExist(character.name)
+              ? `/images/avatars/${character.name}.png`
+              : "images/avatars/default.png",
           };
           return newDict;
         })
@@ -127,7 +130,14 @@ export default function App() {
         <Nav />
         <Switch>
           <Route path="/characters" exact>
-            <Characters />
+            <Characters
+              charactersInfo={charactersInfo}
+              charactersMap={characters}
+              filmsMap={films}
+              planetsMap={planets}
+              starshipsMap={starships}
+              isReady={isReady}
+            />
           </Route>
           <Route path="/films" exact>
             <Films

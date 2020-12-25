@@ -1,0 +1,83 @@
+.cards-header.character-header {
+  width: 6em;
+}
+
+.left-col.character-left-col {
+  width: 52%;
+  left: 0;
+  top: 40px;
+  margin-right: 3em;
+  margin-left: -1em;
+  text-align: center;
+  z-index: 1;
+}
+
+.title-link.character-title-link {
+  position: unset;
+}
+
+.gender {
+  color: black;
+  font-size: 0.88em;
+  margin-top: 8px;
+}
+
+.avatar {
+  object-fit: contain;
+  height: 100%;
+  width: 4em;
+}
+
+.image-circle.avatar-circle {
+  text-align: center;
+  left: 2em;
+  z-index: 1;
+}
+
+.character-card {
+  z-index: 0;
+  position: relative;
+}
+
+.character-card .single-card {
+  padding: 2em;
+  min-height: 90px;
+  margin-bottom: 5em;
+  background: #e4e2e2;
+}
+
+.card-bg {
+  /* background: url("../../utils/resources/character-card-bg.svg") no-repeat; */
+  width: 208px;
+  height: 147px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* border-radius: 13px; */
+  background-size: cover;
+}
+
+.character-card .right-col {
+  z-index: 2;
+}
+
+@media (min-width: 450px) {
+  .cards-header.character-header {
+    width: auto;
+  }
+  .image-circle.avatar-circle {
+    text-align: center;
+    left: 3.5em;
+  }
+}
+
+@media (min-width: 700px) {
+  .cards-header.character-header {
+    font-size: 2em;
+  }
+
+  .card.character-card {
+    margin: 0;
+  }
+}

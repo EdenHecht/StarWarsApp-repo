@@ -10,15 +10,16 @@
   position: relative;
   z-index: 1;
   color: black;
-  font-size: 0.9em;
+  font-size: 0.7em;
   min-height: 85vh;
+  min-width: 249px;
 }
 .poster-container {
   position: relative;
   z-index: 2;
 }
 
-.poster-circle.single-circ {
+.image-circle.single-circ {
   height: 7em;
   width: 7em;
   top: -4em;
@@ -28,7 +29,7 @@
   border: 2px solid;
 }
 
-.poster-img.single-img {
+.image-img.single-img {
   height: 7em;
   width: 7em;
 }
@@ -103,6 +104,18 @@
   z-index: -2;
 }
 
+@media (min-width: 400px) {
+  .film-container {
+    font-size: 0.82em;
+  }
+}
+
+@media (min-width: 400px) {
+  .film-container {
+    font-size: 0.9em;
+  }
+}
+
 @media (min-width: 700px) {
   .film-container {
     display: flex;
@@ -129,11 +142,13 @@
     width: 9em;
     margin: 0em 0 -5em 6em;
     border: 3px solid;
+    border-radius: 50%;
   }
 
   .poster-img.single-img {
     height: 9em;
     width: 9em;
+    border-radius: 50%;
   }
 
   #img-design::before {

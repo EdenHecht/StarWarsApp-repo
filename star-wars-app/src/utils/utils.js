@@ -9,3 +9,9 @@ export function showFirstResults(from, keyName, mapToSearch) {
     return mapToSearch[resultID];
   });
 }
+
+export const avatarExist = (name) => {
+  return avatars.includes(name);
+};
+
+const avatars = ["C-3PO", "Darth Vader", "Luke Skywalker", "R2-D2"];
