@@ -10,7 +10,8 @@
   position: relative;
   z-index: 1;
   color: black;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  min-height: 85vh;
 }
 .poster-container {
   position: relative;
@@ -33,7 +34,7 @@
 }
 
 .film-name-header {
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #7b3232;
   margin-top: 3em;
@@ -72,6 +73,7 @@
 
 .info-col {
   padding: 1em;
+  line-height: 2em;
 }
 
 #img-design {
@@ -99,4 +101,145 @@
   left: 5.5em;
   content: "";
   z-index: -2;
+}
+
+@media (min-width: 700px) {
+  .film-container {
+    display: flex;
+  }
+
+  .left-info-col {
+    width: 30%;
+    font-size: 1.3em;
+    line-height: 2.5em;
+    margin: 1em 3em;
+  }
+
+  .ep-dir-row {
+    display: unset;
+    line-height: unset;
+  }
+
+  .extra-r-padd {
+    padding-right: 0;
+  }
+
+  .poster-circle.single-circ {
+    height: 9em;
+    width: 9em;
+    margin: 0em 0 -5em 6em;
+    border: 3px solid;
+  }
+
+  .poster-img.single-img {
+    height: 9em;
+    width: 9em;
+  }
+
+  #img-design::before {
+    height: 4.5em;
+    width: 4.5em;
+    top: 1em;
+    left: -2.5em;
+  }
+  #img-design::after {
+    height: 5.2em;
+    width: 5.2em;
+    left: 7.5em;
+  }
+
+  .info-header {
+    font-size: 1.2em;
+    margin-bottom: 1.3em;
+  }
+
+  .circles {
+    position: absolute;
+    width: 485px;
+    height: 676px;
+    overflow: hidden;
+    background: url("../../utils/resources/Subtract.svg");
+    bottom: 0;
+    right: 0;
+    background-repeat: no-repeat;
+  }
+
+  .circles::before {
+    background: rgba(123, 50, 50, 0.21);
+    border-radius: 50%;
+    height: 10em;
+    width: 10em;
+    position: absolute;
+    bottom: 2em;
+    left: 0em;
+    content: "";
+    z-index: -2;
+  }
+
+  .circles::after {
+    background: rgba(234, 203, 43, 0.69);
+    border-radius: 50%;
+    height: 7em;
+    width: 7em;
+    position: absolute;
+    bottom: -2em;
+    left: 6em;
+    content: "";
+    z-index: -2;
+  }
+}
+
+@media (min-width: 1100px) {
+  .poster-circle.single-circ {
+    margin: 0em 0 -7em 12em;
+    height: 11em;
+    width: 11em;
+  }
+  .poster-container {
+    margin-top: 2em;
+  }
+  .left-info-col {
+    font-size: 1.5em;
+    margin: -1em 2em;
+    width: 35%;
+  }
+  .film-name-header {
+    font-size: 2em;
+    line-height: 1.5em;
+    margin-top: 4em;
+  }
+  .poster-img.single-img {
+    height: 11em;
+    width: 11em;
+  }
+  #img-design::before {
+    height: 6.5em;
+    width: 6.5em;
+  }
+  #img-design::after {
+    height: 7.2em;
+    width: 7.2em;
+  }
+  .info-col {
+    font-size: 1.3em;
+  }
+  .info-header {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 1400px) {
+  body {
+    text-align: -webkit-center;
+  }
+  .content-info {
+    max-width: 1400px;
+  }
+  .film-container {
+    margin-top: 3em;
+    border-radius: 91px;
+  }
+  .poster-circle.single-circ {
+    margin: 0em 0 -8em -47em;
+  }
 }

@@ -29,62 +29,75 @@ function Films(props) {
           </h1>
           <div className="card-holder">
             {filmsInfo.map((film, index) => (
-              <div className="film-card" key={film.title + "-films"}>
-                <div className="poster-circle">
-                  <img className="poster-img" src={poster} alt="" />
-                </div>
-                <div className="detail-box">
-                  <div className="left-col">
-                    <Link to={`/film/${film.id}`} className="film-title-link">
-                      {film.title}
-                    </Link>
+              <div className="card">
+                <div
+                  className={
+                    expanded === index
+                      ? "film-card film-card-expanded"
+                      : "film-card"
+                  }
+                  key={film.title + "-films"}
+                >
+                  <div className="poster-circle">
+                    <img className="poster-img" src={poster} alt="" />
                   </div>
-                  <div className="right-col">
-                    <div className="margin-b right-item">
-                      Episode: {film.episode_id}
+                  <div className="detail-box">
+                    <div className="left-col">
+                      <Link to={`/film/${film.id}`} className="film-title-link">
+                        {film.title}
+                      </Link>
                     </div>
-                    <div className="margin-b right-item">
-                      Director: {film.director}
+                    <div className="right-col">
+                      <div className="margin-b right-item">
+                        Episode: {film.episode_id}
+                      </div>
+                      <div className="margin-b right-item">
+                        Director: {film.director}
+                      </div>
+                      <div className="right-item">
+                        Release date: {film.release_date}
+                      </div>
                     </div>
-                    <div className="right-item">
-                      Release date: {film.release_date}
+                    <div
+                      className="expand-btn"
+                      onClick={(e) => handleExpand(e, index)}
+                    >
+                      Expand
+                      <img src={arrow} alt="" className="arrow-icon" />
                     </div>
-                  </div>
-                  <div
-                    className="expand-btn"
-                    onClick={(e) => handleExpand(e, index)}
-                  >
-                    Expand
-                    <img src={arrow} alt="" className="arrow-icon" />
                   </div>
                 </div>
                 <div
-                  className={expanded === index ? "expanded" : "not-expanded"}
+                  className={
+                    expanded === index ? "expanded" : "expanded not-expanded"
+                  }
                 >
-                  <div className="column">
-                    <strong>Characters:</strong>
-                    {showFirstResults(film, "characters", charactersMap).map(
-                      (character) => (
-                        <p>{character.name}</p>
-                      )
-                    )}
-                  </div>
-                  <div className="column">
-                    <strong>Planets:</strong>
+                  <div className="columns-container">
+                    <div className="column first">
+                      <strong>Characters</strong>
+                      {showFirstResults(film, "characters", charactersMap).map(
+                        (character) => (
+                          <p>{character.name}</p>
+                        )
+                      )}
+                    </div>
+                    <div className="column">
+                      <strong>Planets</strong>
 
-                    {showFirstResults(film, "planets", planetsMap).map(
-                      (planet) => (
-                        <p>{planet.name}</p>
-                      )
-                    )}
-                  </div>
-                  <div className="column">
-                    <strong>Starships:</strong>
-                    {showFirstResults(film, "starships", starshipsMap).map(
-                      (starship) => (
-                        <p>{starship.name}</p>
-                      )
-                    )}
+                      {showFirstResults(film, "planets", planetsMap).map(
+                        (planet) => (
+                          <p>{planet.name}</p>
+                        )
+                      )}
+                    </div>
+                    <div className="column">
+                      <strong>Starships</strong>
+                      {showFirstResults(film, "starships", starshipsMap).map(
+                        (starship) => (
+                          <p>{starship.name}</p>
+                        )
+                      )}
+                    </div>
                   </div>
                   <div className="read-more">
                     <Link to={`/film/${film.id}`} className="read-more-link">
@@ -92,7 +105,19 @@ function Films(props) {
                     </Link>
                   </div>
                 </div>
-                {/* {expanded === index ? (
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Films;
+
+{
+  /* {expanded === index ? (
                   <div className="expanded">
                     <div className="column">
                       <strong>Characters:</strong>
@@ -125,14 +150,5 @@ function Films(props) {
                       </Link>
                     </div>
                   </div>
-                ) : null} */}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
+                ) : null} */
 }
-
-export default Films;

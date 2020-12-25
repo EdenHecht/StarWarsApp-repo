@@ -6,7 +6,7 @@ body {
   background: linear-gradient(180deg, #32022e 0%, #100117 100%);
   color: #cdc4d0;
   font-family: Montserrat;
-  height: 100vh;
+  height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* width: fit-content; */
@@ -26,6 +26,7 @@ body {
 /* logo svg */
 .logo-img {
   width: 8.5em;
+  margin-top: 0.5em;
 }
 
 /* menu svg */
@@ -116,14 +117,6 @@ body {
     padding: 1em;
     display: flex;
   }
-
-  /* .nav-element {
-    color: #cdc4d0;
-    text-decoration: none;
-    margin-left: 2em;
-    text-transform: uppercase;
-    font-size: 0.9em;
-  } */
 
   .logo-img {
     width: 7em;

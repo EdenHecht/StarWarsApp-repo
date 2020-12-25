@@ -43,10 +43,18 @@ span {
 
 .film-card {
   background: #e4e2e2;
-  margin: 1em 0 5em 0;
-  padding: 2em;
+  margin: 1em 0 0 0;
+  padding: 1em;
   position: relative;
   border-radius: 13px;
+  margin-bottom: 4em;
+  font-size: 0.8em;
+  /* min-width: 332px; */
+}
+
+.film-card.film-card-expanded {
+  border-radius: 13px 13px 0 0;
+  margin-bottom: 0;
 }
 
 .poster-circle {
@@ -67,7 +75,7 @@ span {
 }
 
 .mb {
-  margin: 1em 2em;
+  margin: 1em 1em;
   padding-bottom: 1em;
 }
 
@@ -95,6 +103,7 @@ span {
   padding-left: 0.7em;
   color: black;
   font-size: 0.9em;
+  margin-bottom: 10px;
 }
 
 .margin-b {
@@ -119,12 +128,35 @@ span {
 .expanded {
   color: black;
   font-size: 0.8em;
-  display: flex;
-  margin-top: 20px;
+  display: block;
+  margin-bottom: 6em;
+  transform: scaleY(1);
+  background: #e4e2e2;
+  border-radius: 0 0 13px 13px;
+  position: relative;
+  transform-origin: top;
+  overflow: hidden;
+  height: auto;
+  transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  padding: 0.5em 2em;
+  font-size: 0.7em;
 }
 
 .not-expanded {
-  display: none;
+  display: table-column;
+  transform: scaleY(0);
+}
+
+.card {
+  max-width: 450px;
+  margin: 0 auto;
+  min-width: 230px;
+  display: inherit;
+}
+
+.columns-container {
+  display: flex;
+  margin: 0 auto;
 }
 
 .column {
@@ -132,16 +164,21 @@ span {
   padding: 0.5em;
 }
 
+.column.first {
+  position: relative;
+  margin-bottom: 26px;
+}
+
 .read-more {
   font-size: 0.9em;
-  position: absolute;
-  bottom: 4px;
-  left: 36px;
+  position: unset;
   padding: 6px;
-  margin-bottom: 7px;
   cursor: pointer;
-  border-radius: 7px;
   background: #702b31;
+  margin: 0 auto;
+  border-radius: 15px;
+  width: 88px;
+  text-align: center;
 }
 
 .read-more-link {
@@ -149,13 +186,40 @@ span {
   text-decoration: none;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 400px) {
+  .film-card {
+    padding: 2em;
+    font-size: 0.9em;
+  }
+  .mb {
+    margin: 1em 2em;
+  }
+
+  .right-col {
+    margin-bottom: 0;
+  }
+  .expanded {
+    font-size: 0.78em;
+  }
+
+  .read-more {
+    font-size: 1em;
+    width: 100px;
+  }
+  .expand-btn {
+    font-size: 0.8em;
+    bottom: -4px;
+  }
+}
+
+@media (min-width: 700px) {
   .card-holder {
     display: grid;
     grid-gap: 0 2em;
     margin: 0 auto;
     max-width: 1200px;
     grid-template-columns: repeat(2, 1fr);
+    max-width: 870px;
   }
   .mb {
     margin: 1em 3em;
@@ -165,14 +229,40 @@ span {
     font-size: 2.5em;
     margin: 2em auto 2.5em;
   }
+  .expanded {
+    transform: scaleY(1);
+  }
+  .not-expanded {
+    display: flex;
+    align-content: center;
+    text-align: center;
+  }
+
+  .film-card {
+    margin-bottom: 0;
+    border-radius: 13px 13px 0 0;
+  }
+
+  .expand-btn {
+    display: none;
+  }
+
+  .read-more {
+    width: 144px;
+  }
+
+  .not-expanded {
+    display: block;
+  }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1200px) {
   .card-holder {
     display: grid;
-    grid-gap: 0 4em;
+    grid-gap: 0 3em;
     margin: 0 auto;
     max-width: 1600px;
     grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
   }
 }

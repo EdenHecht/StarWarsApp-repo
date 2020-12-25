@@ -51,13 +51,19 @@ function SingleFilm(props) {
             </div>
           </div>
           <div className="film-container">
-            <h1 className="film-name-header">{filmInfo.title}</h1>
-            <div className="ep-dir-row">
-              <div className="extra-r-padd">Episode: {filmInfo.episode_id}</div>
-              <div>Director: {filmInfo.director}</div>
+            <div className="left-info-col">
+              <h1 className="film-name-header">{filmInfo.title}</h1>
+              <div className="ep-dir-row">
+                <div className="extra-r-padd">
+                  Episode: {filmInfo.episode_id}
+                </div>
+                <div>Director: {filmInfo.director}</div>
+              </div>
+              <div>Release Date: {filmInfo.release_date}</div>
             </div>
-            <div>Release Date: {filmInfo.release_date}</div>
-            <div className="information-card">
+            <div className="information-card right-info-col">
+              <div className="circles"></div>
+
               {characters.length !== 0 ? (
                 <span className="info-col">
                   <p className="info-header">characters</p>
