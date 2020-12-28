@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import arrow from "../../utils/resources/down-arrow.svg";
 import "../common-styles/Cards.css";
 import "./Characters.css";
-
-import { getIdFromUrl } from "../../utils/utils";
+import { getIdFromUrl, showFirstResults } from "../../utils/utils";
 
 function Characters(props) {
   const [expanded, setExpanded] = useState(-1);
@@ -109,44 +108,37 @@ function Characters(props) {
                     </div>
                   </div>
                 </div>
-                {/* <div
+                <div
                   className={
                     expanded === index ? "expanded" : "expanded not-expanded"
                   }
                 >
                   <div className="columns-container">
                     <div className="column first">
-                      <strong>Characters</strong>
-                      {showFirstResults(film, "characters", charactersMap).map(
-                        (character) => (
-                          <p>{character.name}</p>
-                        )
-                      )}
-                    </div>
-                    <div className="column">
-                      <strong>Planets</strong>
-
-                      {showFirstResults(film, "planets", planetsMap).map(
-                        (planet) => (
-                          <p>{planet.name}</p>
-                        )
-                      )}
-                    </div>
-                    <div className="column">
-                      <strong>Starships</strong>
-                      {showFirstResults(film, "starships", starshipsMap).map(
-                        (starship) => (
-                          <p>{starship.name}</p>
+                      <strong>Films</strong>
+                      {showFirstResults(character, "films", filmsMap).map(
+                        (film) => (
+                          <p>
+                            <Link
+                              to={`/film/${film.id}`}
+                              className="expanded-links"
+                            >
+                              {film.title}
+                            </Link>
+                          </p>
                         )
                       )}
                     </div>
                   </div>
                   <div className="read-more">
-                    <Link to={`/film/${film.id}`} className="read-more-link">
+                    <Link
+                      to={`/character/${character.id}`}
+                      className="read-more-link"
+                    >
                       Read More
                     </Link>
                   </div>
-                </div> */}
+                </div>
               </div>
             ))}
           </div>
@@ -157,29 +149,3 @@ function Characters(props) {
 }
 
 export default Characters;
-
-// const [characters, setCharacters] = useState([]);
-// const [isLoading, setIsLoading] = useState(false);
-
-// useEffect(() => {
-//   setIsLoading(true);
-//   axios
-//     .get("https://swapi.dev/api/people/")
-//     .then((res) => {
-//       let charactersInfo = res.data.results;
-//       charactersInfo = charactersInfo.map((character) => {
-//         const id = getIdFromUrl(character.url);
-//         Object.assign(character, { id: id });
-//         return character;
-//       });
-//       setCharacters(charactersInfo);
-//       setIsLoading(false);
-//     })
-//     .catch((err) => console.log("error!: ", err));
-// }, []);
-
-// info.map((character) => (
-//   <p key={character.id}>
-//     <Link to={`/character/${character.id}`}>{character.name}</Link>
-//   </p>
-// ))

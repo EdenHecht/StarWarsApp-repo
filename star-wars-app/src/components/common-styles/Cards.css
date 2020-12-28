@@ -188,6 +188,15 @@ span {
   text-decoration: none;
 }
 
+a.expanded-links {
+  text-decoration: none;
+  color: black;
+}
+
+a.expanded-links:hover {
+  color: #7b3232;
+}
+
 @media (min-width: 400px) {
   .single-card {
     padding: 2em;

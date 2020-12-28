@@ -77,7 +77,14 @@ function Films(props) {
                       <strong>Characters</strong>
                       {showFirstResults(film, "characters", charactersMap).map(
                         (character) => (
-                          <p>{character.name}</p>
+                          <p>
+                            <Link
+                              to={`/character/${character.id}`}
+                              className="expanded-links"
+                            >
+                              {character.name}
+                            </Link>
+                          </p>
                         )
                       )}
                     </div>
@@ -86,7 +93,14 @@ function Films(props) {
 
                       {showFirstResults(film, "planets", planetsMap).map(
                         (planet) => (
-                          <p>{planet.name}</p>
+                          <p>
+                            <Link
+                              to={`/planet/${planet.id}`}
+                              className="expanded-links"
+                            >
+                              {planet.name}
+                            </Link>
+                          </p>
                         )
                       )}
                     </div>
@@ -94,7 +108,14 @@ function Films(props) {
                       <strong>Starships</strong>
                       {showFirstResults(film, "starships", starshipsMap).map(
                         (starship) => (
-                          <p>{starship.name}</p>
+                          <p>
+                            <Link
+                              to={`/starship/${starship.id}`}
+                              className="expanded-links"
+                            >
+                              {starship.name}
+                            </Link>
+                          </p>
                         )
                       )}
                     </div>

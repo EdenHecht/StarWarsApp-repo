@@ -62,6 +62,10 @@
   z-index: 2;
 }
 
+.character-card .expanded {
+  margin-top: -6em;
+}
+
 @media (min-width: 450px) {
   .cards-header.character-header {
     width: auto;
