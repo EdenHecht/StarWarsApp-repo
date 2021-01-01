@@ -40,9 +40,9 @@ function Characters(props) {
             {charactersInfo.map((character, index) => (
               <div className="card character-card">
                 <div className="card-bg">
-                  <svg
+                  {/* <svg
                     width="198"
-                    height="148"
+                    height="100%"
                     viewBox="0 0 198 148"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +53,22 @@ function Characters(props) {
                     />
                     <path
                       d="M0 13C0 5.82031 5.8203 0 13 0H31V147.59H13C5.8203 147.59 0 141.77 0 134.59V13Z"
+                      fill={bg[index % bg.length]}
+                    />
+                  </svg> */}
+                  <svg
+                    width="170"
+                    height="118"
+                    viewBox="0 0 170 118"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 13C0 5.8203 5.8203 0 13 0H30V49H0V13Z"
+                      fill={bg[index % bg.length]}
+                    />
+                    <path
+                      d="M0 78.2723V21H18V0H166.757C168.872 7.80851 170 16.0225 170 24.5C170 76.1386 128.139 118 76.5 118C44.8773 118 16.9212 102.301 0 78.2723Z"
                       fill={bg[index % bg.length]}
                     />
                   </svg>
@@ -88,16 +104,16 @@ function Characters(props) {
                     </div>
                     <div className="right-col">
                       <div className="margin-b right-item">
-                        Home:
+                        Raised in{" "}
                         {planetsMap[getIdFromUrl(character.homeworld)].name}
                       </div>
                       <div className="margin-b right-item">
-                        Birth Year: {character.birth_year}
+                        Born on {character.birth_year}
                       </div>
                       <div className="margin-b right-item">
-                        Height: {character.height}
+                        {character.height}cm
                       </div>
-                      <div className="right-item">mass: {character.mass}</div>
+                      <div className="right-item">{character.mass}kg</div>
                     </div>
                     <div
                       className="expand-btn"

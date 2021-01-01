@@ -198,10 +198,10 @@ a.expanded-links:hover {
 }
 
 @media (min-width: 400px) {
-  .single-card {
+  /* .single-card {
     padding: 2em;
     font-size: 0.9em;
-  }
+  } */
   .mb {
     margin: 1em 2em;
   }

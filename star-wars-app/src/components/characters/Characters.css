@@ -3,10 +3,10 @@
 }
 
 .left-col.character-left-col {
-  width: 52%;
-  left: 0;
-  top: 40px;
-  margin-right: 3em;
+  width: 100%;
+  left: 4px;
+  top: 42px;
+  margin-right: 2em;
   margin-left: -1em;
   text-align: center;
   z-index: 1;
@@ -14,6 +14,7 @@
 
 .title-link.character-title-link {
   position: unset;
+  font-weight: 600;
 }
 
 .gender {
@@ -30,53 +31,55 @@
 
 .image-circle.avatar-circle {
   text-align: center;
-  left: 2em;
+  left: 3em;
   z-index: 1;
 }
 
 .character-card {
   z-index: 0;
   position: relative;
+  max-width: 350px;
 }
 
 .character-card .single-card {
-  padding: 2em;
+  padding: 1em;
   min-height: 90px;
   margin-bottom: 5em;
   background: #e4e2e2;
+  min-width: 263px;
 }
 
 .card-bg {
-  /* background: url("../../utils/resources/character-card-bg.svg") no-repeat; */
-  width: 208px;
-  height: 147px;
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1;
-  /* border-radius: 13px; */
-  background-size: cover;
 }
 
 .character-card .right-col {
   z-index: 2;
+  font-weight: 400;
+  margin-bottom: 16px;
 }
 
 .character-card .expanded {
   margin-top: -6em;
 }
 
-@media (min-width: 450px) {
-  .cards-header.character-header {
-    width: auto;
+@media (min-width: 350px) {
+  .left-col.character-left-col {
+    left: 0;
+    width: 70%;
   }
-  .image-circle.avatar-circle {
-    text-align: center;
-    left: 3.5em;
+  .character-card .right-col {
+    margin-bottom: 1.5em;
+    padding-top: 1em;
+  }
+
+  .character-card .detail-box {
+    font-size: 14px;
   }
 }
 
-@media (min-width: 700px) {
+/* @media (min-width: 700px) {
   .cards-header.character-header {
     font-size: 2em;
   }
@@ -84,4 +87,4 @@
   .card.character-card {
     margin: 0;
   }
-}
+} */

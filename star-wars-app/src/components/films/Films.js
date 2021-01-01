@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-//import "./films.css";
+import "./films.css";
 import "../common-styles/Cards.css";
 import poster from "../../utils/resources/posters/a new hope.jpg";
 import arrow from "../../utils/resources/down-arrow.svg";
