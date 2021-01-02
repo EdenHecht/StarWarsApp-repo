@@ -174,7 +174,13 @@ export default function App() {
             />
           </Route>
           <Route path="/starships" exact>
-            <Starships />
+            <Starships
+              starshipsInfo={starshipsInfo}
+              charactersMap={characters}
+              filmsMap={films}
+              starshipsMap={starships}
+              isReady={isReady}
+            />
           </Route>
           <Route path="/species" exact>
             <Species />
