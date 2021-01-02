@@ -31,7 +31,7 @@
 
 .image-circle.avatar-circle {
   text-align: center;
-  left: 3em;
+  left: 2.8em;
   z-index: 1;
 }
 
@@ -62,11 +62,27 @@
 
 .character-card .expanded {
   margin-top: -6em;
+  min-width: 263px;
+}
+
+.faded-circle {
+  position: absolute;
+  width: 104px;
+  height: 100px;
+  overflow: hidden;
+  background: url("../../utils/resources/faded-circle.svg");
+  bottom: 0;
+  right: 0;
+  background-repeat: no-repeat;
+}
+
+.character-card .column.first {
+  width: 50%;
 }
 
 @media (min-width: 350px) {
   .left-col.character-left-col {
-    left: 0;
+    left: 3px;
     width: 70%;
   }
   .character-card .right-col {
@@ -79,12 +95,25 @@
   }
 }
 
-/* @media (min-width: 700px) {
+@media (min-width: 500px) {
   .cards-header.character-header {
-    font-size: 2em;
+    width: 13em;
   }
+}
 
-  .card.character-card {
-    margin: 0;
+@media (min-width: 700px) {
+  .character-card .single-card {
+    margin-top: 0;
   }
-} */
+}
+
+@media (min-width: 1100px) {
+  .card-holder {
+    display: grid;
+    grid-gap: 0 3em;
+    margin: 0 auto;
+    max-width: 1600px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}

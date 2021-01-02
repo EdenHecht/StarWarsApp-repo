@@ -44,9 +44,9 @@ function SingleFilm(props) {
       ) : (
         <div className="content-info">
           <div className="poster-container">
-            <div className="poster-circle single-circ">
+            <div className="image-circle single-circ">
               <div id="img-design">
-                <img className="poster-img single-img" src={poster} alt="" />
+                <img className="image-img single-img" src={poster} alt="" />
               </div>
             </div>
           </div>

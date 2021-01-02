@@ -19,6 +19,7 @@ export default function App() {
   const [films, setFilms] = useState({});
   const [planets, setPlanets] = useState({});
   const [starships, setStarships] = useState({});
+  const [species, setSpecies] = useState({});
   const [isReady, setIsReady] = useState(false);
 
   const [isLoadingFilms, filmsInfo, filmsError] = useAllResults(
@@ -37,22 +38,28 @@ export default function App() {
     "https://swapi.dev/api/starships/"
   );
 
+  const [isLoadingSpecies, speciesInfo, speciesError] = useAllResults(
+    "https://swapi.dev/api/species/"
+  );
+
   useEffect(() => {
     if (
       !isReady &&
       Object.keys(films).length !== 0 &&
       Object.keys(characters).length !== 0 &&
       Object.keys(planets).length !== 0 &&
+      Object.keys(species).length !== 0 &&
       Object.keys(starships).length !== 0
     ) {
       console.log("planets: ", planets);
       console.log("films: ", films);
       console.log("starships: ", starships);
       console.log("characters: ", characters);
+      console.log("species: ", species);
 
       setIsReady(true);
     }
-  }, [isReady, films, characters, planets, starships]);
+  }, [isReady, films, characters, planets, starships, species]);
 
   useEffect(() => {
     if (!isLoadingFilms && filmsInfo.length !== 0) {
@@ -124,6 +131,23 @@ export default function App() {
     }
   }, [isLoadingPlanets, planetsInfo]);
 
+  useEffect(() => {
+    if (!isLoadingSpecies && speciesInfo.length !== 0) {
+      speciesInfo.map((species) =>
+        setSpecies((prevVal) => {
+          let newDict = { ...prevVal };
+          newDict[species.id] = {
+            id: species.id,
+            name: species.name,
+            url: species.url,
+            imagePath: "",
+          };
+          return newDict;
+        })
+      );
+    }
+  }, [isLoadingSpecies, speciesInfo]);
+
   return (
     <Router>
       <div>
@@ -145,6 +169,7 @@ export default function App() {
               charactersMap={characters}
               planetsMap={planets}
               starshipsMap={starships}
+              speciesMap={species}
               isReady={isReady}
             />
           </Route>

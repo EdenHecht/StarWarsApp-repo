@@ -36,26 +36,10 @@ function Characters(props) {
           <h1 className="cards-header character-header">
             <span id="text-Design">Explore</span> The Characters
           </h1>
-          <div className="card-holder">
+          <div className="card-holder characters-card-holder">
             {charactersInfo.map((character, index) => (
               <div className="card character-card">
                 <div className="card-bg">
-                  {/* <svg
-                    width="198"
-                    height="100%"
-                    viewBox="0 0 198 148"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M198 0C192.587 66.0601 156.338 82.98 143.33 148H21V0H198Z"
-                      fill={bg[index % bg.length]}
-                    />
-                    <path
-                      d="M0 13C0 5.82031 5.8203 0 13 0H31V147.59H13C5.8203 147.59 0 141.77 0 134.59V13Z"
-                      fill={bg[index % bg.length]}
-                    />
-                  </svg> */}
                   <svg
                     width="170"
                     height="118"
@@ -129,6 +113,7 @@ function Characters(props) {
                     expanded === index ? "expanded" : "expanded not-expanded"
                   }
                 >
+                  <div className="faded-circle"></div>
                   <div className="columns-container">
                     <div className="column first">
                       <strong>Films</strong>
@@ -145,15 +130,36 @@ function Characters(props) {
                         )
                       )}
                     </div>
+                    <div className="column">
+                      <strong>Starships</strong>
+                      {character.starships.length > 0 ? (
+                        showFirstResults(
+                          character,
+                          "starships",
+                          starshipsMap
+                        ).map((starship) => (
+                          <p>
+                            <Link
+                              to={`/starship/${starship.id}`}
+                              className="expanded-links"
+                            >
+                              {starship.name}
+                            </Link>
+                          </p>
+                        ))
+                      ) : (
+                        <p>No starships under my command</p>
+                      )}
+                    </div>
                   </div>
-                  <div className="read-more">
+                  {/* <div className="read-more">
                     <Link
                       to={`/character/${character.id}`}
                       className="read-more-link"
                     >
                       Read More
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}

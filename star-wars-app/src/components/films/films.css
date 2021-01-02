@@ -7,3 +7,20 @@
     font-size: 0.9em;
   }
 }
+
+@media (min-width: 700px) {
+  .single-card {
+    margin-bottom: -3px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-holder {
+    display: grid;
+    grid-gap: 0 3em;
+    margin: 0 auto;
+    max-width: 1600px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}
