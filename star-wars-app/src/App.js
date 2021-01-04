@@ -200,7 +200,11 @@ export default function App() {
             />
           </Route>
           <Route path={`/starship/:id`} exact>
-            <SingleStarship />
+            <SingleStarship
+              charactersMap={characters}
+              filmsMap={films}
+              isReady={isReady}
+            />
           </Route>
           <Route path={`/species/:id`} exact>
             <SingleSpecies />
