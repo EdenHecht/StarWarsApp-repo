@@ -1,5 +1,5 @@
 .starships-header {
-  width: 52%;
+  width: 163px;
   margin-bottom: 3em;
 }
 
@@ -42,7 +42,7 @@
   color: black;
   font-size: 12px;
   font-weight: 400;
-  margin-left: 77px;
+  margin-left: 92px;
 }
 
 .starship-details .bold-detail {
@@ -63,6 +63,29 @@
   margin-top: -32px;
   margin-left: -25px;
   position: absolute;
+}
+
+.starship-name-triangle {
+  margin-top: -32px;
+  margin-left: -25px;
+  position: absolute;
+  left: 19px;
+  top: -2px;
+}
+
+.starship-name-triangle .name {
+  position: absolute;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 400;
+  color: #faf6fc;
+  top: 19px;
+  left: 21px;
+  width: 60%;
+}
+
+.starship-name-svg {
+  width: 111px;
 }
 
 .starship-read-more-btn {
@@ -86,26 +109,44 @@
   color: white;
 }
 
+.starship-name-triangle .name::before {
+  content: "";
+  position: absolute;
+  bottom: 61px;
+  left: 44px;
+  height: 2px;
+  width: 20px;
+  background: #2e2430;
+}
+
+.starship-name-triangle .name::after {
+  position: absolute;
+  bottom: 56px;
+  left: 37px;
+  content: "";
+  height: 2px;
+  width: 34px;
+  background: #2e2430;
+}
+
 @media (min-width: 330px) {
   .starship-details {
-    margin-left: 98px;
+    margin-left: 100px;
   }
 }
 
 @media (min-width: 400px) {
   .starships-header {
-    width: 100%;
+    /* width: 100%; */
     font-size: 25px;
   }
 
   .starships-header #text-Design-starships::before {
-    top: 13px;
     left: -70px;
   }
 
   .starships-header #text-Design-starships::after {
-    top: 13px;
-    left: 297px;
+    left: 171px;
   }
 
   .starship-name-circle {
@@ -116,12 +157,45 @@
 
   .starship-details {
     font-size: 14px;
+    margin-left: 125px;
   }
 
   .starship-read-more-btn {
     font-size: 12px;
     width: 75px;
     height: 75px;
+  }
+
+  .starship-name-triangle {
+    margin-top: -32px;
+    margin-left: -25px;
+    left: 15px;
+  }
+
+  .starship-name-triangle .name {
+    font-size: 15px;
+    top: 9px;
+    left: 28px;
+    font-weight: 500;
+  }
+
+  .starship-name-svg {
+    width: 150px;
+    height: 115px;
+  }
+
+  .starship-name-triangle .name::before {
+    bottom: 61px;
+    left: 60px;
+    height: 3px;
+    width: 26px;
+  }
+
+  .starship-name-triangle .name::after {
+    bottom: 55px;
+    left: 53px;
+    height: 3px;
+    width: 40px;
   }
 }
 

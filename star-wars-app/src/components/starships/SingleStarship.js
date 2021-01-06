@@ -44,6 +44,10 @@ function SingleStarship(props) {
             <div>{starshipInfo.name}</div>
           </div>
           <div className="starship-container">
+            <div className="flex-lines">
+              <div className="back-lines left"></div>
+              <div className="back-lines right"></div>
+            </div>
             <div className="main-details">
               <div className="left-triangle"></div>
               <div className="detail">
@@ -72,7 +76,7 @@ function SingleStarship(props) {
             </div>
 
             <div className="starship-columns">
-              <span>
+              <span className="first-col">
                 <p className="column-header">Films</p>
                 {films.length !== 0 ? (
                   films.map((film) => (
@@ -101,6 +105,7 @@ function SingleStarship(props) {
                   <p>No records</p>
                 )}
               </span>
+              <div className="faded-triangles"></div>
             </div>
           </div>
         </>

@@ -3,7 +3,8 @@
   border-radius: 33px 33px 0 0;
   margin-top: -7.5em;
   padding-top: 9em;
-  border-bottom: 20px solid #958e9f;
+  /* border-bottom: 14px solid #958e9f; */
+  box-shadow: 11px 13px 0px -2px #baacac;
 }
 
 .starship-name {
@@ -39,15 +40,17 @@
   height: 196px;
   background: linear-gradient(
     180deg,
-    rgba(109, 45, 125, 0.4) 0%,
-    rgba(173, 142, 186, 0.032) 80%,
-    rgba(198, 180, 209, 0) 100%
+    rgba(125, 45, 79, 0.4) 0%,
+    rgba(123, 50, 50, 0.084) 39.58%,
+    rgba(255, 197, 0, 0.016) 73.61%,
+    rgba(166, 117, 135, 0) 94.44%,
+    rgba(198, 180, 209, 0) 133.33%
   );
   -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%);
-  shape-outside: polygon(0 0, 0 100%, 100% 100%);
+  shape-outside: polygon(0 0, 0 100%, 75% 100%);
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
-  clip-path: polygon(0 0, 0 100%, 100% 100%);
-  shape-margin: 4%;
+  clip-path: polygon(0 0, 0 100%, 70% 100%);
+  shape-margin: 8%;
 }
 
 .starship-container .right-triangle {
@@ -56,12 +59,14 @@
   height: 196px;
   background: linear-gradient(
     0deg,
-    rgba(109, 45, 125, 0.4) 0%,
-    rgba(173, 142, 186, 0.032) 80%,
-    rgba(198, 180, 209, 0) 100%
+    rgba(125, 45, 79, 0.4) 0%,
+    rgba(123, 50, 50, 0.084) 39.58%,
+    rgba(255, 197, 0, 0.016) 73.61%,
+    rgba(166, 117, 135, 0) 94.44%,
+    rgba(198, 180, 209, 0) 133.33%
   );
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
-  clip-path: polygon(0 0%, 100% 0, 100% 100%);
+  clip-path: polygon(30% 0%, 100% 0, 100% 100%);
   position: absolute;
   top: 0;
   right: 0;
@@ -85,6 +90,8 @@
   justify-content: space-evenly;
   font-size: 15px;
   color: black;
+  position: relative;
+  overflow: hidden;
 }
 
 .starship-columns .link {
@@ -96,11 +103,184 @@
   font-weight: 600;
 }
 
+.starship-columns .first-col {
+  margin-right: 10px;
+}
+
+.faded-triangles {
+  width: 140px;
+  height: 55px;
+  content: "";
+  background: url("../../utils/resources/vector-triangles.svg") no-repeat;
+  position: absolute;
+  bottom: 0;
+  right: -13px;
+}
+
+.starship-container .back-lines {
+  content: "";
+  border-top: 4px solid #7b3232;
+  border-bottom: 4px solid #dabe2a;
+  height: 5px;
+  width: 50%;
+}
+
+.starship-container .flex-lines {
+  display: flex;
+}
+
+.back-lines.left {
+  margin-top: -4em;
+}
+
+.back-lines.right {
+  margin-top: -6em;
+}
+
 @media (min-width: 350px) {
   .starship-container .left-triangle {
     shape-outside: unset;
   }
   .starship-container .detail {
     font-size: 15px;
+  }
+}
+
+@media (min-width: 400px) {
+  .starship-container .detail {
+    font-size: 17px;
+  }
+
+  .starship-columns {
+    font-size: 17px;
+  }
+
+  .starship-container .column-header {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 600px) {
+  .starship-name {
+    font-weight: 600;
+    font-size: 20px;
+    background: url("../../utils/resources/triangle-sided.svg") no-repeat;
+    height: 355px;
+    width: 219px;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 245px;
+    z-index: 1;
+  }
+
+  .starship-container {
+    margin-top: 2em;
+  }
+
+  .starship-container .right-triangle {
+    visibility: hidden;
+    height: 0;
+  }
+  .starship-container .left-triangle {
+    visibility: hidden;
+    height: 0;
+  }
+  .starship-container .back-lines {
+    transform: matrix(0.39, -0.95, 0.87, 0.43, 0, 0);
+    height: 14px;
+    width: 100%;
+    position: absolute;
+  }
+
+  .starship-container .back-lines.left {
+    border: unset;
+    background: #7b3232;
+    height: 5px;
+    width: 550px;
+    top: 447.5px;
+    left: -176px;
+    z-index: 0;
+  }
+
+  .starship-container .back-lines.right {
+    border: unset;
+    background: #dabe2a;
+    height: 5px;
+    width: 594px;
+    top: 502px;
+    left: -194px;
+    z-index: 0;
+  }
+
+  .starship-name div {
+    font-size: 27px;
+    bottom: 144px;
+    left: 7%;
+  }
+
+  .starship-columns {
+    position: unset;
+    font-size: 20px;
+  }
+
+  .faded-triangles {
+    width: 100px;
+    height: 405px;
+    content: "";
+    background: url("../../utils//resources/side-triangles-faded.svg") no-repeat;
+    position: absolute;
+    top: 260px;
+  }
+
+  .starship-container .main-details {
+    display: flex;
+  }
+
+  .starship-container .detail {
+    font-size: 20px;
+    margin-left: 54px;
+    margin-top: -4em;
+  }
+
+  .starship-container .column-header {
+    font-size: 27px;
+  }
+}
+
+@media (min-width: 700px) {
+  .starship-container {
+    max-width: 700px;
+    margin: 2em auto 0;
+    position: relative;
+    border-radius: 33px;
+  }
+
+  .faded-triangles {
+    top: 162px;
+    right: 0;
+    border-radius: 0;
+  }
+
+  .starship-container .back-lines.left {
+    width: 540px;
+    top: 316.5px;
+    left: -165px;
+  }
+
+  .starship-container .back-lines.right {
+    width: 571px;
+    top: 365px;
+    left: -174px;
+  }
+}
+
+@media (min-height: 780px) and (max-width: 700px) {
+  .starship-container {
+    border-radius: 33px;
+  }
+
+  .faded-triangles {
+    border-radius: 0 0 51px 0;
   }
 }
