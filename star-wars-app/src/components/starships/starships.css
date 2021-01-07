@@ -109,20 +109,20 @@
   color: white;
 }
 
-.starship-name-triangle .name::before {
+.starship-name-triangle::before {
   content: "";
   position: absolute;
-  bottom: 61px;
-  left: 44px;
+  bottom: 24px;
+  left: 27px;
   height: 2px;
   width: 20px;
   background: #2e2430;
 }
 
-.starship-name-triangle .name::after {
+.starship-name-triangle::after {
   position: absolute;
-  bottom: 56px;
-  left: 37px;
+  bottom: 17px;
+  left: 18px;
   content: "";
   height: 2px;
   width: 34px;
@@ -137,7 +137,6 @@
 
 @media (min-width: 400px) {
   .starships-header {
-    /* width: 100%; */
     font-size: 25px;
   }
 
@@ -227,6 +226,7 @@
   }
 
   .starships-header {
+    width: 100%;
     font-size: 30px;
   }
 

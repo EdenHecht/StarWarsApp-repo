@@ -32,7 +32,7 @@ function Characters(props) {
       {!isReady ? (
         "loading..."
       ) : (
-        <div className="mb">
+        <div className="mb characters-page">
           <h1 className="cards-header character-header">
             <span id="text-Design">Explore</span> The Characters
           </h1>
