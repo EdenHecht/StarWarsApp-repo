@@ -4,6 +4,7 @@ import arrow from "../../utils/resources/down-arrow.svg";
 import "../common-styles/Cards.css";
 import "./Characters.css";
 import { getIdFromUrl, showFirstResults } from "../../utils/utils";
+import Loader from "../common-styles/Loader";
 
 function Characters(props) {
   const [expanded, setExpanded] = useState(-1);
@@ -30,7 +31,7 @@ function Characters(props) {
   return (
     <div>
       {!isReady ? (
-        "loading..."
+        <Loader />
       ) : (
         <div className="mb characters-page">
           <h1 className="cards-header character-header">

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import poster from "../../utils/resources/posters/a new hope.jpg";
 import { useSpecificResult, useAllResults } from "../../hooks/hooks";
 import "./SingleFilm.css";
+import Loader from "../common-styles/Loader";
 
 function SingleFilm(props) {
   const { id } = useParams();
@@ -40,7 +41,7 @@ function SingleFilm(props) {
   return (
     <div>
       {!isAllReady ? (
-        "loading..."
+        <Loader />
       ) : (
         <div className="content-info">
           <div className="poster-container">

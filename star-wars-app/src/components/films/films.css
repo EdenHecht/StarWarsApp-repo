@@ -2,6 +2,10 @@
   padding: 2em;
 }
 
+.film-page .image-circle {
+  border: 2px solid #5a818a;
+}
+
 @media (min-width: 400px) {
   .single-card {
     font-size: 0.9em;

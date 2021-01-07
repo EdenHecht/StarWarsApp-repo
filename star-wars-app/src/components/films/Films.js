@@ -5,6 +5,7 @@ import "../common-styles/Cards.css";
 import poster from "../../utils/resources/posters/a new hope.jpg";
 import arrow from "../../utils/resources/down-arrow.svg";
 import { showFirstResults } from "../../utils/utils";
+import Loader from "../common-styles/Loader";
 
 function Films(props) {
   const [expanded, setExpanded] = useState(-1);
@@ -21,7 +22,7 @@ function Films(props) {
   return (
     <div>
       {!isReady ? (
-        "loading..."
+        <Loader />
       ) : (
         <div className="mb">
           <h1 className="cards-header">
@@ -34,7 +35,7 @@ function Films(props) {
                   className={
                     expanded === index
                       ? "single-card single-card-expanded"
-                      : "single-card"
+                      : "single-card film-page"
                   }
                   key={film.title + "-films"}
                 >

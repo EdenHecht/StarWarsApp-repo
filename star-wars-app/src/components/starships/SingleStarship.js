@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { useSpecificResult, useAllResults } from "../../hooks/hooks";
 import upsideDownTriangle from "../../utils/resources/upside-down-triangle.svg";
 import "./singleStarship.css";
+import Loader from "../common-styles/Loader";
+
 function SingleStarship(props) {
   const { id } = useParams();
   const [films, setFilms] = useState([]);
@@ -38,7 +40,7 @@ function SingleStarship(props) {
   return (
     <div>
       {!isAllReady ? (
-        "loading..."
+        <Loader />
       ) : (
         <>
           <div className="starship-container">

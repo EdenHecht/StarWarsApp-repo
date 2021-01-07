@@ -112,20 +112,20 @@
 .starship-name-triangle::before {
   content: "";
   position: absolute;
-  bottom: 24px;
-  left: 27px;
+  bottom: 35px;
+  left: 19px;
   height: 2px;
-  width: 20px;
+  width: 16px;
   background: #2e2430;
 }
 
 .starship-name-triangle::after {
   position: absolute;
-  bottom: 17px;
-  left: 18px;
+  bottom: 29px;
+  left: 14px;
   content: "";
   height: 2px;
-  width: 34px;
+  width: 26px;
   background: #2e2430;
 }
 
@@ -183,18 +183,18 @@
     height: 115px;
   }
 
-  .starship-name-triangle .name::before {
-    bottom: 61px;
-    left: 60px;
-    height: 3px;
-    width: 26px;
+  .starship-name-triangle::before {
+    bottom: 24px;
+    left: 27px;
+    height: 2px;
+    width: 20px;
   }
 
-  .starship-name-triangle .name::after {
-    bottom: 55px;
-    left: 53px;
-    height: 3px;
-    width: 40px;
+  .starship-name-triangle::after {
+    bottom: 17px;
+    left: 18px;
+    height: 2px;
+    width: 34px;
   }
 }
 

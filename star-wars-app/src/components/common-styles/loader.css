@@ -1,0 +1,22 @@
+@keyframes play18 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -3942px 0px;
+  }
+}
+.shapeshifter {
+  animation-duration: 1500ms;
+  animation-timing-function: steps(18);
+  animation-iteration-count: infinite;
+  width: 219px;
+  height: 232px;
+  background-repeat: no-repeat;
+  background-image: url("../../utils/resources/loading-lightsaber.svg");
+  margin: 3em auto;
+  transform: rotate(20deg);
+}
+.shapeshifter.play {
+  animation-name: play18;
+}

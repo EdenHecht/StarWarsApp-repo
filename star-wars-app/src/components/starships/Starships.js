@@ -1,26 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useAllResults } from "../../hooks/hooks";
 import "../common-styles/Cards.css";
 import "./starships.css";
+import Loader from "../common-styles/Loader";
 
 function Starships(props) {
-  const [expanded, setExpanded] = useState(-1);
-
-  const {
-    starshipsInfo,
-    charactersMap,
-    filmsMap,
-    starshipsMap,
-    isReady,
-  } = props;
+  const { starshipsInfo, isReady } = props;
 
   const bg = ["#606679", "#6B6079", "#796069"];
 
   return (
     <div>
       {!isReady ? (
-        "loading..."
+        <Loader />
       ) : (
         <div className="starships-page">
           <h1 className="cards-header starships-header">
