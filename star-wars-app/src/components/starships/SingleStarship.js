@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSpecificResult, useAllResults } from "../../hooks/hooks";
+import upsideDownTriangle from "../../utils/resources/upside-down-triangle.svg";
 import "./singleStarship.css";
 function SingleStarship(props) {
   const { id } = useParams();
@@ -40,16 +41,16 @@ function SingleStarship(props) {
         "loading..."
       ) : (
         <>
-          <div className="starship-name">
-            <div>{starshipInfo.name}</div>
-          </div>
           <div className="starship-container">
+            <div className="starship-name">
+              <div>{starshipInfo.name}</div>
+            </div>
             <div className="flex-lines">
               <div className="back-lines left"></div>
               <div className="back-lines right"></div>
             </div>
             <div className="main-details">
-              <div className="left-triangle"></div>
+              <img src={upsideDownTriangle} alt="" />
               <div className="detail">
                 <p>
                   Cost <strong>{starshipInfo.cost_in_credits}</strong> credits
@@ -72,11 +73,10 @@ function SingleStarship(props) {
                   <strong>{starshipInfo.cargo_capacity}</strong> cargo capacity
                 </p>
               </div>
-              <div className="right-triangle"></div>
             </div>
 
             <div className="starship-columns">
-              <span className="first-col">
+              <span className="col first-col">
                 <p className="column-header">Films</p>
                 {films.length !== 0 ? (
                   films.map((film) => (
@@ -91,7 +91,7 @@ function SingleStarship(props) {
                 )}
               </span>
 
-              <span>
+              <span className="col">
                 <p className="column-header">Pilots</p>
                 {characters.length !== 0 ? (
                   characters.map((character) => (
