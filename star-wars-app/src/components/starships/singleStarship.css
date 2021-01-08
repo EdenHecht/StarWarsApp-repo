@@ -127,7 +127,7 @@
   }
 
   .starship-container {
-    padding-top: 5em;
+    padding-top: 3em;
     padding-bottom: 2em;
     background: #e4e2e2;
     border-radius: 92px;
@@ -182,7 +182,7 @@
 
   .starship-columns {
     position: unset;
-    margin: 2em 0 0 8em;
+    margin: 3em 0 0 8em;
     justify-content: unset;
   }
 

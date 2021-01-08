@@ -20,7 +20,10 @@ function Starships(props) {
           </h1>
           <div className="card-holder">
             {starshipsInfo.map((starship, index) => (
-              <div className="card starship-card">
+              <div
+                key={`starships-page-${starship.id}`}
+                className="card starship-card"
+              >
                 <div className="single-card">
                   <div className="starship-name-triangle">
                     <svg

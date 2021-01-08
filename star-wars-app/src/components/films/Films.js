@@ -30,7 +30,7 @@ function Films(props) {
           </h1>
           <div className="card-holder">
             {filmsInfo.map((film, index) => (
-              <div className="card">
+              <div key={`films-page-${film.id}`} className="card">
                 <div
                   className={
                     expanded === index
@@ -78,7 +78,9 @@ function Films(props) {
                       <strong>Characters</strong>
                       {showFirstResults(film, "characters", charactersMap).map(
                         (character) => (
-                          <p>
+                          <p
+                            key={`films-page-${film.id}-character-${character.id}`}
+                          >
                             <Link
                               to={`/character/${character.id}`}
                               className="expanded-links"
@@ -94,7 +96,7 @@ function Films(props) {
 
                       {showFirstResults(film, "planets", planetsMap).map(
                         (planet) => (
-                          <p>
+                          <p key={`films-page-${film.id}-planet-${planet.id}`}>
                             <Link
                               to={`/planet/${planet.id}`}
                               className="expanded-links"
@@ -109,7 +111,9 @@ function Films(props) {
                       <strong>Starships</strong>
                       {showFirstResults(film, "starships", starshipsMap).map(
                         (starship) => (
-                          <p>
+                          <p
+                            key={`films-page-${film.id}-starship-${starship.id}`}
+                          >
                             <Link
                               to={`/starship/${starship.id}`}
                               className="expanded-links"

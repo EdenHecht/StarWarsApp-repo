@@ -82,7 +82,7 @@ function SingleStarship(props) {
                 <p className="column-header">Films</p>
                 {films.length !== 0 ? (
                   films.map((film) => (
-                    <p key={film.title + starshipInfo.name}>
+                    <p key={`starship-page-${starshipInfo.id}-film-${film.id}`}>
                       <Link to={`/film/${film.id}`} className="link">
                         {film.title}
                       </Link>
@@ -97,7 +97,9 @@ function SingleStarship(props) {
                 <p className="column-header">Pilots</p>
                 {characters.length !== 0 ? (
                   characters.map((character) => (
-                    <p key={character.name}>
+                    <p
+                      key={`starship-page-${starshipInfo.id}-character-${character.id}`}
+                    >
                       <Link to={`/character/${character.id}`} className="link">
                         {character.name}
                       </Link>

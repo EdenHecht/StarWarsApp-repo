@@ -183,7 +183,13 @@ export default function App() {
             <Planets />
           </Route>
           <Route path={`/character/:id`} exact>
-            <SingleCharacter />
+            <SingleCharacter
+              charactersMap={characters}
+              filmsMap={films}
+              planetsMap={planets}
+              starshipsMap={starships}
+              isReady={isReady}
+            />
           </Route>
           <Route path={`/film/:id`} exact>
             <SingleFilm

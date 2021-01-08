@@ -39,7 +39,10 @@ function Characters(props) {
           </h1>
           <div className="card-holder characters-card-holder">
             {charactersInfo.map((character, index) => (
-              <div className="card character-card">
+              <div
+                key={`characters-page-${character.id}`}
+                className="card character-card"
+              >
                 <div className="card-bg">
                   <svg
                     width="170"
@@ -120,7 +123,7 @@ function Characters(props) {
                       <strong>Films</strong>
                       {showFirstResults(character, "films", filmsMap).map(
                         (film) => (
-                          <p>
+                          <p key={`characters-film-${film.id}`}>
                             <Link
                               to={`/film/${film.id}`}
                               className="expanded-links"
@@ -139,7 +142,7 @@ function Characters(props) {
                           "starships",
                           starshipsMap
                         ).map((starship) => (
-                          <p>
+                          <p key={`characters-starship-${starship.id}`}>
                             <Link
                               to={`/starship/${starship.id}`}
                               className="expanded-links"
@@ -153,14 +156,14 @@ function Characters(props) {
                       )}
                     </div>
                   </div>
-                  {/* <div className="read-more">
+                  <div className="read-more">
                     <Link
                       to={`/character/${character.id}`}
                       className="read-more-link"
                     >
                       Read More
                     </Link>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             ))}

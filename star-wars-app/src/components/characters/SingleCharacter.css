@@ -1,0 +1,246 @@
+.single-character-page {
+  overflow: hidden;
+  min-width: 350px;
+}
+
+.single-character-page .circle-bg {
+  background: #e4e2e2;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  margin: 4em -7em;
+  position: relative;
+}
+
+.single-character-page .image-circle.avatar-circle {
+  top: 0;
+  left: 144px;
+  border: 2px solid #c6bebe;
+}
+
+.single-character-page .character-name {
+  margin-left: 12em;
+  font-weight: bold;
+  font-size: 23px;
+  color: #470606;
+  width: 100px;
+  padding-top: 20px;
+}
+
+.single-character-page .container {
+  margin-left: 9em;
+  margin-top: 3em;
+  color: black;
+  font-size: 15px;
+}
+
+.single-character-page .details {
+  display: flex;
+  padding-top: 1.5em;
+}
+
+.single-character-page .details strong {
+  font-weight: 600;
+}
+
+.single-character-page .first.col {
+  margin-right: 3em;
+  z-index: 1;
+}
+
+.single-character-page .col {
+  font-size: 15px;
+}
+
+.single-character-page .second-row {
+  display: flex;
+  margin-top: 1.5em;
+}
+
+.single-character-page .second-row .films {
+  width: 35%;
+  z-index: 1;
+}
+
+.single-character-page .second-row .starships {
+  width: 25%;
+  z-index: 1;
+}
+
+.single-character-page .second-row p:hover {
+  font-weight: 600;
+  color: #441065;
+}
+
+.single-character-page .second-row strong {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.single-character-page .white-circle {
+  content: "";
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 253, 253, 0.37);
+  position: absolute;
+  border-radius: 50%;
+  bottom: 87px;
+  z-index: 0;
+  left: 12px;
+}
+
+.single-character-page .red-circle {
+  content: "";
+  width: 55px;
+  height: 55px;
+  background: #dc5d5d;
+  position: absolute;
+  bottom: 62px;
+  left: 104px;
+  border-radius: 50%;
+}
+
+.single-character-page .blue-circle {
+  content: "";
+  width: 75px;
+  height: 75px;
+  background: #609bd2;
+  position: absolute;
+  bottom: 0;
+  right: 149px;
+  border-radius: 50%;
+}
+
+.single-character-page .green-circle {
+  content: "";
+  width: 32px;
+  height: 32px;
+  background: #5ba56b;
+  position: absolute;
+  bottom: -9px;
+  right: 238px;
+  border-radius: 50%;
+}
+
+.single-character-page .yellow-circle {
+  content: "";
+  width: 55px;
+  height: 55px;
+  background: #e6a94e;
+  position: absolute;
+  bottom: -32px;
+  right: 260px;
+  border-radius: 50%;
+}
+
+@media (min-width: 400px) {
+  .single-character-page .circle-bg {
+    margin: 4em -6em;
+  }
+
+  .single-character-page .col {
+    font-size: 16px;
+  }
+
+  .single-character-page .second-row .films {
+    margin-right: 1em;
+  }
+  .single-character-page .red-circle {
+    left: 69px;
+  }
+}
+
+@media (min-width: 450px) {
+  .single-character-page .character-name {
+    margin-left: 11em;
+    font-size: 27px;
+    padding-top: 31px;
+  }
+  .single-character-page .col {
+    font-size: 18px;
+  }
+
+  .single-character-page .avatar {
+    width: 5em;
+  }
+
+  .single-character-page .image-circle {
+    height: 7em;
+    width: 7em;
+  }
+
+  .single-character-page .container {
+    margin-left: 10em;
+  }
+
+  .single-character-page .second-row .films {
+    margin-right: 4em;
+  }
+
+  .single-character-page .second-row {
+    font-size: 17px;
+  }
+
+  .single-character-page .second-row strong {
+    font-size: 25px;
+  }
+
+  .single-character-page .white-circle {
+    width: 300px;
+    height: 300px;
+    bottom: 49px;
+    left: 68px;
+  }
+}
+
+@media (min-width: 500px) {
+  .single-character-page .circle-bg {
+    margin: 4em -4em;
+  }
+
+  .single-character-page .red-circle {
+    width: 65px;
+    height: 65px;
+    bottom: 45px;
+  }
+  .single-character-page .blue-circle {
+    width: 95px;
+    height: 95px;
+    bottom: 10px;
+    right: 88px;
+  }
+  .single-character-page .green-circle {
+    width: 40px;
+    height: 40px;
+    bottom: -6px;
+    right: 196px;
+  }
+  .single-character-page .yellow-circle {
+    width: 65px;
+    height: 65px;
+    bottom: -26px;
+    right: 220px;
+  }
+}
+
+@media (min-width: 700px) {
+  .single-character-page {
+    margin-top: 3em;
+    position: relative;
+    overflow: unset;
+  }
+  .single-character-page .image-circle.avatar-circle {
+    top: 0px;
+    left: 126px;
+  }
+  .single-character-page .image-circle {
+    height: 8em;
+    width: 8em;
+  }
+  .single-character-page .avatar {
+    width: 5.5em;
+  }
+  .single-character-page .circle-bg {
+    margin: 0 auto;
+  }
+}

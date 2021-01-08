@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import poster from "../../utils/resources/posters/a new hope.jpg";
-import { useSpecificResult, useAllResults } from "../../hooks/hooks";
+import { useSpecificResult } from "../../hooks/hooks";
 import "./SingleFilm.css";
 import Loader from "../common-styles/Loader";
 
@@ -13,7 +13,7 @@ function SingleFilm(props) {
   const [starships, setStarships] = useState([]);
   const [isAllReady, setIsAllReady] = useState(false);
 
-  const [isLoadingFilm, filmInfo, fileError] = useSpecificResult(
+  const [isLoadingFilm, filmInfo, filmError] = useSpecificResult(
     `https://swapi.dev/api/films/${id}`
   );
 

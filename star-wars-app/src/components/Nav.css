@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap");
 
 body {
   margin: 0;
@@ -9,7 +9,6 @@ body {
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* width: fit-content; */
 }
 
 .navbar {
@@ -18,7 +17,6 @@ body {
 
 /* menu and logo row */
 .logo-menu {
-  /* width: 100vw; */
   display: flex;
   cursor: pointer;
 }
@@ -36,9 +34,7 @@ body {
 
 /* menu div */
 .menu {
-  /* width: 35%; */
   cursor: pointer;
-  /* new */
   position: absolute;
 }
 
@@ -66,7 +62,7 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .elm::after {
