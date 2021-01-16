@@ -11,6 +11,7 @@ import SingleSpecies from "./components/species/SingleSpecies";
 import Planets from "./components/planets/Planets";
 import SinglePlanet from "./components/planets/SinglePlanet";
 import Nav from "./components/Nav";
+import Home from "./components/home/Home";
 import { useAllResults } from "./hooks/hooks";
 import { avatarExist } from "./utils/utils";
 
@@ -151,9 +152,12 @@ export default function App() {
   return (
     <Router>
       <div>
-        <Nav />
         <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
           <Route path="/characters" exact>
+            <Nav />
             <Characters
               charactersInfo={charactersInfo}
               charactersMap={characters}
@@ -164,6 +168,7 @@ export default function App() {
             />
           </Route>
           <Route path="/films" exact>
+            <Nav />
             <Films
               filmsInfo={filmsInfo}
               charactersMap={characters}
@@ -174,15 +179,18 @@ export default function App() {
             />
           </Route>
           <Route path="/starships" exact>
+            <Nav />
             <Starships starshipsInfo={starshipsInfo} isReady={isReady} />
           </Route>
-          <Route path="/species" exact>
+          {/* <Route path="/species" exact>
+
             <Species />
           </Route>
           <Route path="/planets" exact>
             <Planets />
-          </Route>
+          </Route> */}
           <Route path={`/character/:id`} exact>
+            <Nav />
             <SingleCharacter
               charactersMap={characters}
               filmsMap={films}
@@ -192,6 +200,7 @@ export default function App() {
             />
           </Route>
           <Route path={`/film/:id`} exact>
+            <Nav />
             <SingleFilm
               charactersMap={characters}
               planetsMap={planets}
@@ -200,18 +209,19 @@ export default function App() {
             />
           </Route>
           <Route path={`/starship/:id`} exact>
+            <Nav />
             <SingleStarship
               charactersMap={characters}
               filmsMap={films}
               isReady={isReady}
             />
           </Route>
-          <Route path={`/species/:id`} exact>
+          {/* <Route path={`/species/:id`} exact>
             <SingleSpecies />
           </Route>
           <Route path={`/planets/:id`} exact>
             <SinglePlanet />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>
