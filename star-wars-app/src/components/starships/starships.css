@@ -201,6 +201,7 @@
 @media (min-width: 700px) {
   .starship-card .single-card {
     padding: 10px;
+    margin-bottom: 7em;
   }
 
   .starships-page .card-holder {

@@ -31,6 +31,9 @@ function Nav() {
         <div className="exit" onClick={handleMenuClick}>
           <img src={exit} alt="exit" className="exit-icon" />
         </div>
+        <Link to="/" onClick={handleMenuSelection} className="nav-element elm">
+          home
+        </Link>
         <Link
           to="/characters"
           onClick={handleMenuSelection}
@@ -55,7 +58,7 @@ function Nav() {
           starships
         </Link>
 
-        <Link
+        {/* <Link
           to="/species"
           onClick={handleMenuSelection}
           className="nav-element elm"
@@ -69,7 +72,7 @@ function Nav() {
           className="nav-element elm"
         >
           planets
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

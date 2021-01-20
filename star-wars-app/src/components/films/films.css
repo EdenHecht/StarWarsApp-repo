@@ -6,6 +6,11 @@
   border: 2px solid #5a818a;
 }
 
+.films-page .columns-container strong {
+  font-weight: 600;
+  font-size: 12px;
+}
+
 @media (min-width: 400px) {
   .single-card {
     font-size: 0.9em;

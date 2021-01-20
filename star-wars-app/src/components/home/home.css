@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap");
 
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
 .home-page {
   position: relative;
   margin: 0;
@@ -23,7 +40,6 @@
   padding: 40px;
   width: 100px;
   font-size: 50px;
-  /* font-family: "nunito"; */
   line-height: 1.2em;
   margin-bottom: 10px;
   font-weight: 600;
@@ -36,9 +52,11 @@
 
 .home-page .meteor {
   position: absolute;
-  top: 0;
+  top: -10px;
   right: 0;
   width: 555px;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
 }
 
 .home-page .bg-illus .bg {
@@ -61,7 +79,6 @@
 }
 
 .home-page .first-row-mobile .cta {
-  /* box-sizing: border-box; */
   text-align: center;
   display: flex;
   justify-content: center;
@@ -158,13 +175,24 @@
     margin-right: 25px;
     width: 170px;
     height: 170px;
-    border-radius: 50%;
-    border: 3px solid #765577;
     padding: 0;
+    border: unset;
   }
 
-  .home-page .films-button {
-    margin-top: 15px;
+  .home-page .icon {
+    border-radius: 50%;
+    border: 3px solid #765577;
+    height: 120px;
+    width: 120px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .home-page .button-label {
+    height: fit-content;
   }
 
   .home-page .cta {
@@ -176,22 +204,29 @@
   }
 
   .home-page .second-row-mobile .cta {
-    border: 3px solid #765577;
     padding: 0;
     margin-bottom: 15px;
     height: 170px;
     width: 170px;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: unset;
   }
 
   .home-page .second-row-mobile .left-button {
     margin-right: 25px;
   }
 
-  .home-page .first-row-mobile .cta:hover {
+  .home-page .first-row-mobile :hover {
+    background: unset;
+  }
+
+  .home-page .second-row-mobile :hover {
+    background: unset;
+  }
+
+  .home-page .cta .button-label :hover {
     background: #36203a;
   }
 }
@@ -274,16 +309,21 @@
     margin-top: 0;
     padding: 0;
     margin-bottom: 1em;
+    position: relative;
   }
 
   .home-page .container {
     margin-top: 21em;
     margin-left: 4em;
+    max-width: 2100px;
   }
 
   .home-page .buttons {
     float: right;
     margin-right: 5em;
+  }
+  .home-page .stars {
+    bottom: -70px;
   }
 }
 
@@ -305,17 +345,39 @@
 
   .home-page .buttons {
     padding-top: 23em;
-    float: right;
-    margin-right: 5em;
+    margin-right: 8%;
   }
 
   .home-page .stars {
     width: 100%;
     text-align: left;
   }
+
+  .home-page .stars {
+    bottom: -110px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .home-page .stars {
+    bottom: -140px;
+  }
 }
 
 @media (max-height: 830px) {
+  .home-page {
+    overflow: unset;
+    margin-bottom: 20px;
+  }
+  .home-page .stars {
+    display: none;
+  }
+  .home-page .buttons {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-height: 900px) and (min-width: 750px) {
   .home-page {
     overflow: unset;
     margin-bottom: 20px;

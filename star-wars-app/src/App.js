@@ -71,7 +71,7 @@ export default function App() {
             id: film.id,
             title: film.title,
             url: film.url,
-            imagePath: "",
+            imagePath: `/images/posters/${film.title}.jpg`,
           };
           return newDict;
         })
@@ -171,6 +171,7 @@ export default function App() {
             <Nav />
             <Films
               filmsInfo={filmsInfo}
+              filmsMap={films}
               charactersMap={characters}
               planetsMap={planets}
               starshipsMap={starships}
@@ -203,6 +204,7 @@ export default function App() {
             <Nav />
             <SingleFilm
               charactersMap={characters}
+              filmsMap={films}
               planetsMap={planets}
               starshipsMap={starships}
               isReady={isReady}

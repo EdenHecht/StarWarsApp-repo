@@ -1,13 +1,12 @@
 import { useParams, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import poster from "../../utils/resources/posters/a new hope.jpg";
 import { useSpecificResult } from "../../hooks/hooks";
 import "./SingleFilm.css";
 import Loader from "../common-styles/Loader";
 
 function SingleFilm(props) {
   const { id } = useParams();
-  const { charactersMap, planetsMap, starshipsMap, isReady } = props;
+  const { charactersMap, filmsMap, planetsMap, starshipsMap, isReady } = props;
   const [characters, setCharacters] = useState([]);
   const [planets, setPlanets] = useState([]);
   const [starships, setStarships] = useState([]);
@@ -47,7 +46,11 @@ function SingleFilm(props) {
           <div className="poster-container">
             <div className="image-circle single-circ">
               <div id="img-design">
-                <img className="image-img single-img" src={poster} alt="" />
+                <img
+                  className="image-img single-img"
+                  src={filmsMap[filmInfo.id].imagePath}
+                  alt=""
+                />
               </div>
             </div>
           </div>

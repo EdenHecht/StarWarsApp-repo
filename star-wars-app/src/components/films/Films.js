@@ -2,14 +2,20 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "./films.css";
 import "../common-styles/Cards.css";
-import poster from "../../utils/resources/posters/a new hope.jpg";
 import arrow from "../../utils/resources/down-arrow.svg";
 import { showFirstResults } from "../../utils/utils";
 import Loader from "../common-styles/Loader";
 
 function Films(props) {
   const [expanded, setExpanded] = useState(-1);
-  const { filmsInfo, charactersMap, planetsMap, starshipsMap, isReady } = props;
+  const {
+    filmsInfo,
+    filmsMap,
+    charactersMap,
+    planetsMap,
+    starshipsMap,
+    isReady,
+  } = props;
 
   function handleExpand(e, index) {
     if (index === expanded) {
@@ -24,7 +30,7 @@ function Films(props) {
       {!isReady ? (
         <Loader />
       ) : (
-        <div className="mb">
+        <div className="films-page mb">
           <h1 className="cards-header">
             <span id="text-Design">Explore</span> The Films
           </h1>
@@ -40,7 +46,11 @@ function Films(props) {
                   key={film.title + "-films"}
                 >
                   <div className="image-circle">
-                    <img className="image-img" src={poster} alt="" />
+                    <img
+                      className="image-img"
+                      src={filmsMap[film.id].imagePath}
+                      alt=""
+                    />
                   </div>
                   <div className="detail-box">
                     <div className="left-col">

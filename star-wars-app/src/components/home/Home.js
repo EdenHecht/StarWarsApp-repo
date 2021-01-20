@@ -415,7 +415,7 @@ function Home() {
         <img src={stars} alt="stars" className="stars" />
       </div>
       <div className="container">
-        <h1>Explore The Galaxy</h1>
+        <h1 className="header">Explore The Galaxy</h1>
         <div className="buttons">
           <div className="first-row-mobile">
             <div className="cta">

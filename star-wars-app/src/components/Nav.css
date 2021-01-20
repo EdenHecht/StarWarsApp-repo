@@ -99,7 +99,7 @@ body {
   cursor: pointer;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   .logo {
     cursor: pointer;
     margin-top: 0;
@@ -161,6 +161,6 @@ body {
   .elm {
     margin: 1em 2em 0 0;
     font-size: 0.9em;
-    font-weight: normal;
+    font-weight: 600;
   }
 }
